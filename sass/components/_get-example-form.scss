@@ -1,0 +1,88 @@
+.get-example-form {
+	position: relative;
+	
+    padding: 45px 0;
+
+    border-radius: $card-border-radius;
+
+    background-color: get-color("form-bg");
+
+	@include for-size(tablet) {
+		padding-top: 70px;
+		padding-bottom: 60px;
+	}
+
+	@include for-size(laptop) {
+		padding-left: 80px;
+	}
+
+    &__inner {
+        max-width: 420px;
+    }
+
+    &__field {
+		position: relative;
+		
+        display: block;
+        margin-bottom: 15px;
+
+        @include for-size(tablet) {
+            margin-bottom: 25px;
+        }
+    }
+
+    &__input {
+        width: 100%;
+        padding: 20px 28px;
+
+        border-radius: 60px;
+
+        background-color: #fff;
+		font-size: 18px;
+    }
+
+	&__label {
+		position: absolute;
+		top: 50%;
+		left: 28px;
+		transform: translateY(-50%);
+		
+		color: get-color('primary-black');
+		font-size: 17px;
+
+		@include for-size(tablet) {
+			font-size: 18px;
+		}
+	}
+	
+    &__button {
+        margin-bottom: 15px;
+
+        @include for-size(mobile-only) {
+            padding-left: 5px;
+            padding-right: 5px;
+            font-size: 15px;
+        }
+
+        @include for-size(tablet) {
+            margin-bottom: 25px;
+        }
+    }
+
+    &__policy {
+        margin-bottom: 0;
+
+        color: get-color("form-policy");
+        text-align: center;
+        @include font(400, 12px, 1.17);
+    }
+}
+
+.policy {
+    color: currentColor;
+    text-decoration: underline;
+
+    &:hover {
+        color: get-color("accent");
+    }
+}

@@ -1,0 +1,220 @@
+.section {
+    position: relative;
+
+    // Clouds background
+
+    &--clouds-bg {
+        padding-top: 75px;
+        padding-bottom: 110px;
+
+        @include for-size(tablet) {
+            padding-top: 100px;
+            padding-bottom: 165px;
+        }
+
+        @include for-size(laptop) {
+            padding-top: 140px;
+            padding-bottom: 220px;
+        }
+
+        @include for-size(desktop) {
+            padding-top: 180px;
+            padding-bottom: 300px;
+        }
+
+        // Top Cloud
+
+        &::before {
+            top: 0;
+            left: 0;
+
+            background-image: image-set(
+                url(../images/common/clouds-top-mobile.png) 1x,
+                url(../images/common/clouds-top-mobile@2x.png) 2x
+            );
+
+            @include for-size(tablet) {
+                background-image: image-set(
+                    url(../images/common/clouds-top-tablet.png) 1x,
+                    url(../images/common/clouds-top-desktop.png) 2x
+                );
+            }
+            @include for-size(laptop) {
+                background-image: image-set(
+                    url(../images/common/clouds-top-desktop.png) 1x,
+                    url(../images/common/clouds-top-desktop@2x.png) 2x
+                );
+            }
+        }
+
+        // Bottom Cloud
+
+        &::after {
+            bottom: 0;
+            left: 0;
+
+            background-image: image-set(
+                url(../images/common/clouds-bottom-mobile.png) 1x,
+                url(../images/common/clouds-bottom-mobile@2x.png) 2x
+            );
+
+            @include for-size(tablet) {
+                background-image: image-set(
+                    url(../images/common/clouds-bottom-tablet.png) 1x,
+                    url(../images/common/clouds-bottom-desktop.png) 2x
+                );
+            }
+            @include for-size(laptop) {
+                background-image: image-set(
+                    url(../images/common/clouds-bottom-desktop.png) 1x,
+                    url(../images/common/clouds-bottom-desktop@2x.png) 2x
+                );
+            }
+        }
+    }
+
+    &--clouds-top-bg {
+        &::before {
+            top: 0;
+            left: 0;
+
+            background-image: image-set(
+                url(../images/common/clouds-top-mobile.png) 1x,
+                url(../images/common/clouds-top-mobile@2x.png) 2x
+            );
+
+            @include for-size(tablet) {
+                background-image: image-set(
+                    url(../images/common/clouds-top-tablet.png) 1x,
+                    url(../images/common/clouds-top-desktop.png) 2x
+                );
+            }
+
+            @include for-size(laptop) {
+                background-image: image-set(
+                    url(../images/common/clouds-top-desktop.png) 1x,
+                    url(../images/common/clouds-top-desktop@2x.png) 2x
+                );
+            }
+        }
+    }
+
+    &--clouds-bottom-bg {
+		padding-bottom: 110px;
+
+        @include for-size(tablet) {
+            padding-bottom: 165px;
+        }
+
+        @include for-size(laptop) {
+            padding-bottom: 220px;
+        }
+
+        @include for-size(desktop) {
+            padding-bottom: 300px;
+        }
+
+        &::after {
+            bottom: 0;
+            left: 0;
+			z-index: -1;
+
+            background-image: image-set(
+                url(../images/common/clouds-bottom-mobile.png) 1x,
+                url(../images/common/clouds-bottom-mobile@2x.png) 2x
+            );
+
+            @include for-size(tablet) {
+                background-image: image-set(
+                    url(../images/common/clouds-bottom-tablet.png) 1x,
+                    url(../images/common/clouds-bottom-desktop.png) 2x
+                );
+            }
+
+            @include for-size(laptop) {
+                background-image: image-set(
+                    url(../images/common/clouds-bottom-desktop.png) 1x,
+                    url(../images/common/clouds-bottom-desktop@2x.png) 2x
+                );
+            }
+        }
+    }
+
+    // Smoke background
+
+    &--smoke-bg {
+    }
+
+    // Common styles
+
+    &--clouds-bg,
+    &--clouds-top-bg,
+    &--clouds-bottom-bg {
+        //         @media screen and (max-width: 599px) {
+        //             background-size: 120% auto;
+        //         }
+        //
+        //         @media screen and (max-width: 499px) {
+        //             background-size: 150% auto;
+        //         }
+        //
+        //         @media screen and (max-width: 399px) {
+        //             background-size: 200% auto;
+        //         }
+        //
+        //         @media screen and (min-width: $desktop) {
+        //             background-size: 100% 280px;
+        //         }
+
+        &::before,
+        &::after {
+            content: "";
+
+            position: absolute;
+            // z-index: -1;
+
+            width: 100%;
+            height: 100px;
+
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+
+            @include for-size(mobile) {
+                height: 120px;
+            }
+
+            @include for-size(tablet) {
+                height: 150px;
+            }
+
+            @include for-size(laptop) {
+                height: 200px;
+            }
+
+            @include for-size(desktop) {
+                height: 290px;
+            }
+        }
+    }
+}
+
+.section__section-title {
+    margin-bottom: 30px;
+
+    @include for-size(mobile) {
+        margin-bottom: 40px;
+    }
+
+    @include for-size(tablet) {
+        margin-bottom: 50px;
+    }
+}
+
+.section__container {
+    @include for-size(mobile-only) {
+        max-width: $mobile;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}

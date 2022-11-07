@@ -1,0 +1,209 @@
+.catalog {
+    padding-top: 75px;
+    padding-bottom: 100px;
+
+    background-image: image-set(
+        url(../images/catalog/firewood-optimized.png) 1x,
+        url(../images/catalog/firewood-optimized@2x.png) 2x
+    );
+    background-size: 50% auto;
+    background-repeat: no-repeat;
+    background-position: bottom 2vh right;
+
+    @include for-size(tablet) {
+        padding-top: 100px;
+        padding-bottom: 165px;
+        background-size: 30% auto;
+    }
+
+    @include for-size(laptop) {
+        padding-top: 140px;
+        padding-bottom: 220px;
+        // background-size: 35% auto;
+    }
+
+    @include for-size(desktop) {
+        padding-top: 180px;
+        padding-bottom: 300px;
+        background-size: 35% auto;
+        background-position: bottom 5vh right;
+    }
+
+    &__list {
+        @extend %list;
+
+        @include for-size(tablet) {
+            @include flex-grid($grid-gap);
+            row-gap: 45px;
+        }
+    }
+
+    &__category {
+        margin-bottom: 0;
+
+        text-shadow: -2px -2px 5px get-color("primary-black");
+
+        @include font(700, 20px, 1.07);
+        text-align: center;
+
+        @include for-size(mobile) {
+            font-size: 24px;
+        }
+
+        @include for-size(tablet) {
+            font-size: 22px;
+        }
+
+        @include for-size(desktop) {
+            font-size: 28px;
+        }
+    }
+
+    &__link {
+        color: currentColor;
+    }
+}
+
+.catalog__item {
+    position: relative;
+
+    @include for-size(tablet) {
+        flex-basis: calc((100% - #{$grid-gap}) / 2);
+    }
+
+    &:not(:last-child) {
+        @include for-size(mobile-only) {
+            margin-bottom: 50px;
+        }
+    }
+
+    &:first-child {
+        &::before {
+            content: "";
+
+            position: absolute;
+            z-index: -1;
+
+            height: 301px;
+            width: 50%;
+
+            background-image: image-set(
+                url(../images/common/catalog-sparks.png) 1x,
+                url(../images/common/catalog-sparks@2x.png) 2x
+            );
+            background-size: cover;
+            background-position: center;
+
+            // transition: transform $transition-duration $ttf;
+
+            @include for-size(until-desktop) {
+                bottom: -100px;
+                left: -20px;
+                transform: rotate(-90deg);
+            }
+
+            @include for-size(desktop) {
+                // width: 275px;
+                top: -150px;
+                left: -195px;
+            }
+        }
+    }
+
+    // &:hover:first-child::before {
+    //     transform: scale(1.02) translateY(-10px);
+    // }
+
+    &:nth-child(4n + 1) {
+        .catalog__thumb::before {
+            background: radial-gradient(
+                circle at top left,
+                rgb(255 164 27 / 70%) 0%,
+                rgb(255 206 132 / 10%) 40%
+            );
+        }
+    }
+
+    &:nth-child(4n + 2) {
+        .catalog__thumb::before {
+            background: radial-gradient(
+                circle at bottom right,
+                rgb(255 164 27 / 70%) 0%,
+                rgb(255 206 132 / 10%) 40%
+            );
+        }
+    }
+
+    &:nth-child(4n + 3) {
+        .catalog__thumb::before {
+            background: radial-gradient(
+                circle at bottom left,
+                rgb(255 164 27 / 70%) 0%,
+                rgba(255, 206, 132, 0.1) 40%
+            );
+        }
+    }
+
+    &:nth-child(4n + 4) {
+        .catalog__thumb::before {
+            background: radial-gradient(
+                circle at top left,
+                rgb(255 164 27 / 70%) 0%,
+                rgba(255, 206, 132, 0.1) 40%
+            );
+        }
+    }
+}
+
+.catalog__thumb {
+    position: relative;
+
+    margin-bottom: 20px;
+
+    border-radius: $card-mobile-border-radius;
+
+    overflow: hidden;
+    background-image: radial-gradient(
+        circle at bottom left,
+        rgb(255 164 27 / 70%) 0%,
+        rgba(255, 206, 132, 0.1) 40%
+    );
+
+    transition: transform $transition-duration $ttf, box-shadow $transition-duration $ttf;
+
+    @include for-size(tablet) {
+        border-radius: $card-border-radius;
+    }
+
+    .catalog__item:hover & {
+        // transform: scale(1.02) translateY(-10px);
+        box-shadow: 0 0 20px 5px get-color("secondary-accent--hover-opacity");
+    }
+
+    &::before {
+        content: "";
+
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 1;
+
+        width: 100%;
+        height: 100%;
+
+        // animation: gradient 500ms ease infinite alternate;
+    }
+
+    .catalog__item--accent & {
+        box-shadow: 0 0 20px 5px get-color("secondary-accent--hover-opacity");
+        transform: scale(1.01);
+    }
+}
+
+.catalog__image {
+    transition: transform $transition-duration $ttf;
+
+    .catalog__item:hover & {
+        transform: scale(1.02);
+    }
+}

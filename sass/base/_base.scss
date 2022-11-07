@@ -1,0 +1,26 @@
+body {
+	background-color: get-color('page-bg');
+	color: get-color('primary-white');
+	font-family: 'Familjen Grotesk', sans-serif;
+	@include font(400, 22px, 1.27)
+}
+
+.container {
+	min-width: 290px;
+	max-width: 1330px;
+	padding-left: 15px;
+	padding-right: 15px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.visually-hidden {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	margin: -1px;
+	border: 0;
+	padding: 0;
+	clip: rect(0 0 0 0);
+	overflow: hidden;
+}

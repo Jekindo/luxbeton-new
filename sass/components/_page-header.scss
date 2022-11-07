@@ -1,0 +1,179 @@
+.page-header {
+    position: absolute;
+    z-index: 2;
+
+    width: 100%;
+
+    transition: background-color $transition-duration $ttf;
+
+    &--menu-open {
+        @include for-size(until-laptop) {
+            background-color: get-color("mobile-menu-bg");
+        }
+    }
+
+    &__nav {
+        @include centered-flex($main-axis: space-between);
+        padding-top: 16px;
+
+        @include for-size(laptop) {
+            padding-top: 50px;
+        }
+
+        @include for-size(desktop) {
+            padding-top: 25px;
+        }
+    }
+
+    &__contacts {
+        @include for-size(laptop-only) {
+            position: absolute;
+            top: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+
+            display: flex;
+            justify-content: center;
+            width: 100%;
+            column-gap: 50px;
+        }
+
+        @include for-size(desktop) {
+            @include aligned-flex;
+            flex-direction: column;
+        }
+    }
+}
+
+//! Message
+
+.message {
+    margin-bottom: 40px;
+
+    @include for-size(laptop) {
+        @include aligned-flex;
+    }
+
+    @include for-size(desktop) {
+        margin-bottom: 7px;
+    }
+
+    &__icon {
+        width: 45px;
+        height: 45px;
+
+        fill: currentColor;
+
+        @include for-size(laptop) {
+            width: 35px;
+            height: 35px;
+        }
+
+        @include for-size(desktop) {
+            width: 30px;
+            height: 30px;
+        }
+    }
+}
+
+.message__action {
+    display: block;
+    flex-shrink: 0;
+
+    font-size: 16px;
+
+    @include for-size(until-laptop) {
+        margin-bottom: 15px;
+    }
+
+    @include for-size(laptop) {
+        margin-right: 12px;
+        font-size: 12px;
+    }
+
+    &::before {
+        content: "";
+
+        display: inline-block;
+        width: 8px;
+        height: 8px;
+        margin-right: 11px;
+
+        border-radius: 50%;
+
+        background-color: get-color("online-dark");
+
+        @include color-pulse(get-color("online-dark"), get-color("online"));
+
+        animation: color-pulse 1000ms 750ms infinite alternate, pulse 1000ms 750ms infinite alternate;
+    }
+}
+
+.message__link {
+    @include centered-flex(inline-flex);
+
+    border-radius: 50%;
+
+    animation: 1500ms 750ms infinite;
+    transition: transform $transition-duration $ttf, color $transition-duration $ttf;
+
+    &:hover {
+        transform: scale(1.2);
+    }
+
+    &:not(:last-child) {
+        margin-right: 35px;
+
+        @include for-size(laptop) {
+            margin-right: 20px;
+        }
+    }
+
+    &:nth-child(2) {
+        color: #1be985;
+
+        @include pulse-icon(rgb(25 230 131 / 50%), whatsapp);
+
+        animation-name: pulse-icon-whatsapp;
+
+        &:hover {
+            color: #00e676;
+        }
+    }
+
+    &:nth-child(3) {
+        color: #4bbce9;
+
+        @include pulse-icon(rgb(64 179 224 / 50%), telegram);
+
+        animation-name: pulse-icon-telegram;
+
+        &:hover {
+            color: #40b3e0;
+        }
+    }
+}
+
+//! Company Phone Number
+
+.company-phone {
+    color: inherit;
+    @include font(700, 26px, inherit);
+
+	animation: headShake 3100ms 750ms ease-in-out infinite;
+	transition: color $transition-duration $ttf;
+
+	&:hover {
+		animation-play-state: paused;
+		color: #ffeed9;
+	}
+	
+    @include for-size(laptop) {
+        font-size: 22px;
+    }
+
+    &__icon {
+        vertical-align: middle;
+        margin-right: 10px;
+    }
+}

@@ -1,0 +1,29 @@
+.gallery {
+    min-height: 700px;
+    padding: 50px 0;
+
+    border: 1px solid teal;
+    background-color: get-color("primary-white");
+
+    position: relative;
+    z-index: 1;
+
+    &::after {
+        content: "";
+
+		outline: 1px solid tomato;
+		
+        position: absolute;
+        top: 70%;
+        right: 0;
+        z-index: -1;
+
+        width: 70%;
+		height: 60vh;
+
+        background-image: url(../images/common/dark-cloud.png);
+		background-repeat: no-repeat;
+		background-size: fill;
+		background-position: center;
+    }
+}

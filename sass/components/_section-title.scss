@@ -1,0 +1,84 @@
+.section-title {
+    position: relative;
+
+   padding: 20px;
+
+    @include font(700, 34px);
+    text-transform: uppercase;
+    text-align: center;
+
+   @include for-size (mobile) {
+		font-size: 40px;
+    }
+
+    @include for-size(tablet) {
+		display: inline-block;
+        padding-right: 35px;
+        padding-left: 35px;
+    }
+
+   @include for-size(laptop) {
+        font-size: 45px;
+    }
+
+    &--light {
+        color: get-color("primary-white");
+    }
+
+    &--dark {
+        color: get-color("primary-black");
+    }
+
+	&--left-aligned {
+		text-align: left;
+	}
+
+    &::before,
+    &::after,
+    &__frame::before,
+    &__frame::after {
+        content: "";
+
+        position: absolute;
+        width: 30px;
+        height: 30px;
+    }
+
+    &::before {
+        top: 0;
+        left: 0;
+
+        border-top: 3px solid get-color("accent");
+        border-left: 3px solid get-color("accent");
+    }
+
+    &::after {
+        top: 0;
+        right: 0;
+
+        border-top: 3px solid get-color("accent");
+        border-right: 3px solid get-color("accent");
+    }
+
+    &__frame {
+        &::before {
+            bottom: 0;
+            left: 0;
+
+            border-bottom: 3px solid get-color("accent");
+            border-left: 3px solid get-color("accent");
+        }
+
+        &::after {
+            bottom: 0;
+            right: 0;
+
+            border-bottom: 3px solid get-color("accent");
+            border-right: 3px solid get-color("accent");
+        }
+    }
+}
+
+.title-wrapper {
+	text-align: center;
+}

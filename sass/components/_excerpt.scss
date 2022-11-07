@@ -1,0 +1,24 @@
+.excerpt {
+	&--accent {
+		color: get-color('accent');
+	}
+
+	&--accent-secondary {
+		color: get-color('secondary-accent');
+	}
+
+	&--bold {
+		font-weight: 700;
+	}
+
+	&__link {
+		text-decoration: underline;
+		color: inherit;
+
+		transition: color $transition-duration $ttf;
+
+		&:hover {
+			color: get-color('secondary-accent');
+		}
+	}
+}

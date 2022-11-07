@@ -1,0 +1,141 @@
+.control-menu {
+    @include centered-flex;
+
+    @include for-size(until-laptop) {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        z-index: 1;
+
+        width: 100%;
+
+        background: linear-gradient(
+            45deg,
+            get-color("secondary-accent") 70%,
+            get-color("accent") 100%
+        );
+        background-size: 400% 400%;
+        animation: gradient 10s ease infinite;
+    }
+
+	@include for-size(laptop) {
+        column-gap: 10px;
+    }
+
+    @media screen and (min-width: 1600px) {
+        position: absolute;
+        top: 50%;
+        right: 0;
+        transform: translateY(-50%);
+
+        flex-direction: column;
+    }
+
+    &__button,
+    &__button-switch {
+        @extend %no-border;
+        @include centered-flex(inline-flex, center, center);
+        padding: 10px;
+
+        background-color: get-color("secondary-accent");
+        color: get-color("primary-white");
+        cursor: pointer;
+
+        transition: transform $transition-duration $ttf,
+		            box-shadow $transition-duration $ttf,
+                    background-color $transition-duration $ttf;
+    }
+
+    &__button {
+        flex-direction: column;
+        align-self: stretch;
+        flex-basis: 25%;
+
+        @include font(500, 11px, 0.9);
+        text-align: center;
+
+		&:hover, 
+		&:focus {
+			background-color: get-color('secondary-accent--hover');
+        }
+		
+        @include for-size(until-laptop) {
+            background-color: transparent;
+        }
+
+		@include for-size(laptop) {
+            flex-basis: calc((100% - 4 * 10px) / 5);
+            padding: 15px;
+
+            font-size: 12px;
+
+            &:hover, 
+            &:focus {
+                box-shadow: 0px 0px 15px get-color("button-shadow");
+                transform: scale(1.02);
+            }
+        }
+
+        @media screen and (min-width: $laptop) and (max-width: 1599px) {
+            border-radius: 10px;
+        }
+
+        @media screen and (min-width: 1600px) {
+            width: 110px;
+            margin-bottom: 5px;
+
+            border-top-left-radius: 10px;
+            border-bottom-left-radius: 10px;
+
+            &:nth-child(4) {
+                margin-bottom: 10px;
+            }
+        }
+    }
+
+    &__icon {
+        width: 25px;
+        height: 25px;
+        margin-bottom: 5px;
+
+        fill: currentColor;
+
+        transition: transform $transition-duration $ttf, filter $transition-duration $ttf;
+
+        @include for-size(laptop) {
+            margin-bottom: 8px;
+        }
+
+        .control-menu__button:hover &,
+        .control-menu__button:focus & {
+            filter: drop-shadow(0 0 5px currentColor);
+            transform: translateY(-2px) scale(1.01);
+        }
+    }
+
+    &__button-switch {
+        border-radius: 10px;
+
+        @include for-size(until-desktop) {
+            display: none;
+        }
+
+        &:hover, 
+        &:focus {
+            transform: scale(1.1);
+            box-shadow: 0 0 24px -2px rgb(255 145 2 / 90%);
+        }
+    }
+
+    &__icon-arrow {
+        width: 15px;
+        height: 13px;
+
+        transition: transform 500ms $ttf;
+
+        .control-menu__button-switch:hover &,
+        .control-menu__button-switch:focus & {
+            transform: rotate(1turn);
+        }
+    }
+}

@@ -1,0 +1,144 @@
+.advantages {
+    // padding: 20px 0;
+
+    background-color: get-color(primary-white);
+
+    @include for-size(tablet) {
+        padding: 50px 0;
+    }
+
+    &__list {
+        @extend %list;
+        color: get-color("primary-black");
+
+        @include for-size(tablet) {
+            @include flex-grid($grid-gap);
+        }
+    }
+
+    &__item-body {
+        padding: 32px 15px;
+
+        @include for-size(laptop) {
+            padding-left: 25px;
+            padding-right: 25px;
+        }
+    }
+
+    &__headline {
+        margin-bottom: 7px;
+
+        @include font(700, 18px, 1.27);
+        text-transform: uppercase;
+    }
+
+    &__descr {
+        margin-bottom: 0;
+        font-size: 16px;
+        line-height: 1.3;
+    }
+
+	&__image {
+		padding-left: 15px;
+		padding-right: 15px;
+		// padding-bottom: 15px;
+	}
+}
+
+.advantages__grid-item {
+    outline: 1px solid tomato;
+
+    display: flex;
+    flex-direction: column;
+
+    @include for-size(tablet) {
+        flex-basis: calc((100% - #{$grid-gap}) / 2);
+    }
+
+    @include for-size(laptop) {
+        flex-basis: calc((100% - 2 * #{$grid-gap}) / 3);
+    }
+
+    &:not(:last-child) {
+        @include for-size(mobile-only) {
+            margin-bottom: 20px;
+        }
+    }
+
+    &--2r {
+        gap: $grid-gap;
+    }
+
+    &--2c {
+        gap: $grid-gap;
+
+        @include for-size(laptop) {
+            flex-direction: row;
+            flex-basis: 100%;
+        }
+
+        .advantages__item {
+            @include for-size(laptop) {
+                flex-basis: 50%;
+            }
+        }
+    }
+}
+
+.advantages__item {
+    outline: 1px solid teal;
+
+    position: relative;
+
+    flex-grow: 1;
+    // padding: 32px 15px;
+
+    border-radius: $card-mobile-border-radius;
+    overflow: hidden;
+
+    @include for-size(tablet) {
+        border-radius: $card-border-radius;
+    }
+
+    @include for-size(laptop) {
+        // padding-left: 25px;
+        // padding-right: 25px;
+    }
+
+    &--accent {
+        display: flex;
+        justify-content: space-around;
+        flex-direction: column;
+
+        background-image: $card-accent-gradient;
+    }
+
+    &--accent-reversed {
+        background-image: $card-accent-gradient-reversed;
+        flex-direction: column-reverse;
+    }
+
+    //
+    //     &--dark {
+    //         background-image: $card-dark-gradient;
+    //         color: get-color("primary-white");
+    //
+    //         // display: flex;
+    //         // justify-content: space-between;
+    //
+    //         .advantages__image {
+    //             // position: absolute;
+    //             // right: 0;
+    //             // bottom: 0;
+    //
+    //             // float: right;
+    //             margin-left: auto;
+    //         }
+    //     }
+    //
+    //     &--light {
+    //         @include centered-flex($main-axis: space-between);
+    //
+    //         background-image: $card-light-gradient;
+    //     }
+}

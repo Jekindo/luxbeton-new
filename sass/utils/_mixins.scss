@@ -1,0 +1,84 @@
+@mixin font($weight, $size, $height: inherit) {
+    font-weight: $weight;
+    font-size: $size;
+    line-height: $height;
+}
+
+@mixin centered-flex($type: flex, $cross-axis: center, $main-axis: center) {
+    display: $type;
+    align-items: $cross-axis;
+    justify-content: $main-axis;
+}
+
+@mixin aligned-flex($type: flex) {
+    display: $type;
+    align-items: center;
+}
+
+@mixin flex-grid($gap) {
+    display: flex;
+    flex-wrap: wrap;
+    gap: $gap;
+}
+
+@mixin for-size($range) {
+    $mobile: 480px;
+    $tablet: 768px;
+    $laptop: 1024px;
+    $desktop: 1330px;
+
+    @if $range == mobile-only {
+        @media screen and (max-width: #{$tablet - 1}) {
+            @content;
+        }
+    } @else if $range == tablet-only {
+        @media screen and (min-width: #{$tablet}) and (max-width: #{$laptop - 1}) {
+            @content;
+        }
+    } @else if $range == laptop-only {
+        @media screen and (min-width: #{$laptop}) and (max-width: #{$desktop - 1}) {
+            @content;
+        }
+    } @else if $range == mobile-small {
+        @media screen and (max-width: #{$mobile - 1}) {
+            @content;
+        }
+    } @else if $range == until-laptop {
+        @media screen and (max-width: #{$laptop - 1}) {
+            @content;
+        }
+    } @else if $range == until-desktop {
+        @media screen and (max-width: #{$desktop - 1}) {
+            @content;
+        }
+    } @else if $range == mobile {
+        @media screen and (min-width: $mobile) {
+            @content;
+        }
+    } @else if $range == tablet {
+        @media screen and (min-width: $tablet) {
+            @content;
+        }
+    } @else if $range == laptop {
+        @media screen and (min-width: $laptop) {
+            @content;
+        }
+    } @else if $range == desktop {
+        @media screen and (min-width: $desktop) {
+            @content;
+        }
+    }
+}
+
+@mixin list-marker($var, $list, $base-selector, $folder, $format) {
+    @each $var in $list {
+        $idx: index($list, $var);
+
+        #{$base-selector}:nth-child(#{$idx})::before {
+            background-image: image-set(
+                url(../images/#{$folder}/#{$var}#{$format}) 1x,
+                url(../images/#{$folder}/#{$var}@2x#{$format}) 2x
+            );
+        }
+    }
+}

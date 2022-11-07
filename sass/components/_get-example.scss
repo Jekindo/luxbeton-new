@@ -1,0 +1,19 @@
+.get-example {
+    padding: 50px 0;
+
+    background-color: get-color("primary-white");
+
+    &__image {
+        @include for-size(laptop) {
+            position: absolute;
+            top: 50%;
+            right: -50%;
+            z-index: 1;
+            transform: translateY(calc(-50% + 30px));
+        }
+    }
+
+    &__get-example-form {
+        max-width: 960px;
+    }
+}
