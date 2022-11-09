@@ -2418,12 +2418,12 @@ body {
   margin-bottom: 24px;
   text-transform: uppercase;
   font-weight: 700;
-  font-size: 36px;
+  font-size: 34px;
   line-height: 1.15;
 }
 @media screen and (min-width: 1024px) {
   .location__card-headline {
-    font-size: 44px;
+    font-size: 40px;
   }
 }
 .location__address {

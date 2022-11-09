@@ -35,10 +35,10 @@
         margin-bottom: 24px;
 
         text-transform: uppercase;
-        @include font(700, 36px, 1.15);
+        @include font(700, 34px, 1.15);
 
         @include for-size(laptop) {
-            font-size: 44px;
+            font-size: 40px;
         }
     }
 
