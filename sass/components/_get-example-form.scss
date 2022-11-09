@@ -1,28 +1,28 @@
 .get-example-form {
-	position: relative;
-	
+    position: relative;
+
+    max-width: 70%;
     padding: 45px 0;
 
-    border-radius: $card-border-radius;
 
-    background-color: get-color("form-bg");
+    @include for-size(laptop) {
+        border-radius: $card-border-radius;
 
-	@include for-size(tablet) {
-		padding-top: 70px;
-		padding-bottom: 60px;
-	}
+        background-color: get-color("form-bg");
+    }
 
-	@include for-size(laptop) {
-		padding-left: 80px;
-	}
+    @include for-size(desktop) {
+        padding-left: 80px;
+    }
 
-    &__inner {
-        max-width: 420px;
+    @include for-size(tablet) {
+        padding-top: 70px;
+        padding-bottom: 60px;
     }
 
     &__field {
-		position: relative;
-		
+        position: relative;
+
         display: block;
         margin-bottom: 15px;
 
@@ -33,35 +33,38 @@
 
     &__input {
         width: 100%;
+        max-width: 420px;
         padding: 20px 28px;
 
         border-radius: 60px;
 
         background-color: #fff;
-		font-size: 18px;
+        font-size: 18px;
     }
 
-	&__label {
-		position: absolute;
-		top: 50%;
-		left: 28px;
-		transform: translateY(-50%);
-		
-		color: get-color('primary-black');
-		font-size: 17px;
+    &__label {
+        position: absolute;
+        top: 50%;
+        left: 28px;
+        transform: translateY(-50%);
 
-		@include for-size(tablet) {
-			font-size: 18px;
-		}
-	}
-	
+        color: get-color("primary-black");
+        font-size: 17px;
+
+        @include for-size(tablet) {
+            font-size: 18px;
+        }
+    }
+
     &__button {
         margin-bottom: 15px;
+        width: 100%;
+
+        font-size: 15px;
 
         @include for-size(mobile-only) {
             padding-left: 5px;
             padding-right: 5px;
-            font-size: 15px;
         }
 
         @include for-size(tablet) {
@@ -84,5 +87,39 @@
 
     &:hover {
         color: get-color("accent");
+    }
+}
+
+.get-example-form__inner {
+   
+
+    @include for-size(laptop) {
+        max-width: 420px;
+    }
+
+    @include for-size(until-laptop) {
+		position: relative;
+		
+        padding-top: 45px;
+        padding-bottom: 45px;
+    }
+
+    &::before {
+        @include for-size(until-laptop) {
+            content: "";
+
+            position: absolute;
+            top: 0;
+            left: 50%;
+            z-index: -1;
+            transform: translateX(-50%);
+
+            width: calc(100% + 30px);
+            height: 100%;
+
+            border-radius: $card-border-radius;
+
+            background-color: get-color("form-bg");
+        }
     }
 }

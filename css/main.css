@@ -2202,38 +2202,42 @@ body {
   background-color: #fff;
 }
 @media screen and (min-width: 1024px) {
+  .get-example {
+    padding-bottom: 100px;
+  }
+}
+@media screen and (min-width: 1024px) {
   .get-example__image {
     position: absolute;
     top: 50%;
-    right: -50%;
+    right: 0;
     z-index: 1;
-    -webkit-transform: translateY(calc(-50% + 30px));
-            transform: translateY(calc(-50% + 30px));
+    -webkit-transform: translateX(50%) translateY(-50%);
+            transform: translateX(50%) translateY(-50%);
   }
-}
-.get-example__get-example-form {
-  max-width: 960px;
 }
 
 .get-example-form {
   position: relative;
+  max-width: 70%;
   padding: 45px 0;
-  border-radius: 20px;
-  background-color: #272727;
+}
+@media screen and (min-width: 1024px) {
+  .get-example-form {
+    border-radius: 20px;
+    background-color: #272727;
+  }
+}
+@media screen and (min-width: 1330px) {
+  .get-example-form {
+    padding-left: 80px;
+  }
 }
 @media screen and (min-width: 768px) {
   .get-example-form {
     padding-top: 70px;
     padding-bottom: 60px;
   }
-}
-@media screen and (min-width: 1024px) {
-  .get-example-form {
-    padding-left: 80px;
-  }
-}
-.get-example-form__inner {
-  max-width: 420px;
 }
 .get-example-form__field {
   position: relative;
@@ -2247,6 +2251,7 @@ body {
 }
 .get-example-form__input {
   width: 100%;
+  max-width: 420px;
   padding: 20px 28px;
   border-radius: 60px;
   background-color: #fff;
@@ -2268,12 +2273,13 @@ body {
 }
 .get-example-form__button {
   margin-bottom: 15px;
+  width: 100%;
+  font-size: 15px;
 }
 @media screen and (max-width: 767px) {
   .get-example-form__button {
     padding-left: 5px;
     padding-right: 5px;
-    font-size: 15px;
   }
 }
 @media screen and (min-width: 768px) {
@@ -2296,6 +2302,34 @@ body {
 }
 .policy:hover {
   color: #ff9900;
+}
+
+@media screen and (min-width: 1024px) {
+  .get-example-form__inner {
+    max-width: 420px;
+  }
+}
+@media screen and (max-width: 1023px) {
+  .get-example-form__inner {
+    position: relative;
+    padding-top: 45px;
+    padding-bottom: 45px;
+  }
+}
+@media screen and (max-width: 1023px) {
+  .get-example-form__inner::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    z-index: -1;
+    -webkit-transform: translateX(-50%);
+            transform: translateX(-50%);
+    width: calc(100% + 30px);
+    height: 100%;
+    border-radius: 20px;
+    background-color: #272727;
+  }
 }
 
 .dark-cloud--end, .dark-cloud--start {

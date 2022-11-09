@@ -3,17 +3,17 @@
 
     background-color: get-color("primary-white");
 
+	@include for-size(laptop) {
+		padding-bottom: 100px;
+	}
+
     &__image {
         @include for-size(laptop) {
             position: absolute;
             top: 50%;
-            right: -50%;
+            right: 0;
             z-index: 1;
-            transform: translateY(calc(-50% + 30px));
+			transform: translateX(50%) translateY(-50%);
         }
-    }
-
-    &__get-example-form {
-        max-width: 960px;
     }
 }
