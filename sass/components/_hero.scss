@@ -27,8 +27,8 @@
                 url(../images/hero/hero-bg-desktop.jpg) 1x,
                 url(../images/hero/hero-bg-desktop@2x.jpg) 2x
             );
-        background-position: top left 20%;
-        background-size: contain;
+        background-position: center;
+        background-size: cover;
     }
 
     @include for-size(laptop) {
@@ -88,10 +88,6 @@
             margin-bottom: 50px;
             font-size: 20px;
         }
-    }
-
-    .section--clouds-bottom-bg {
-        display: none;
     }
 }
 
@@ -274,6 +270,8 @@ $list-images: "rock", "clock", "money", "varanty";
 .hero__thumb {
     position: relative;
 
+    max-width: 1100px;
+
     @include for-size(tablet-only) {
         transform: translateY(70%);
     }
@@ -287,6 +285,10 @@ $list-images: "rock", "clock", "money", "varanty";
 
     @include for-size(laptop) {
         bottom: 0;
+    }
+
+    @media screen and (min-width: 2250px) {
+		right: 5vw;
     }
 
     &::before,

@@ -1,4 +1,7 @@
 .gallery {
+	position: relative;
+	z-index: 1;
+	
     min-height: 700px;
     padding: 50px 0;
 
@@ -8,22 +11,20 @@
     position: relative;
     z-index: 1;
 
-    &::after {
-        content: "";
+	&__dark-cloud {
+		position: absolute;
+		z-index: -1;
+	
+		top: 190px;
+		left: 0;
 
-		outline: 1px solid tomato;
-		
-        position: absolute;
-        top: 70%;
-        right: 0;
-        z-index: -1;
-
-        width: 70%;
-		height: 60vh;
-
-        background-image: url(../images/common/dark-cloud.png);
-		background-repeat: no-repeat;
-		background-size: fill;
-		background-position: center;
-    }
+	
+		@include for-size(tablet) {
+			top: -130px;
+		}
+	
+		@include for-size(laptop) {
+			top: -100px;
+		}
+	}
 }

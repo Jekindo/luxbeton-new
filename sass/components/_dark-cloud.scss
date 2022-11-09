@@ -1,0 +1,18 @@
+.dark-cloud {
+	&--end,
+	&--start {
+		position: absolute;
+		z-index: -1;
+
+		width: 50vw;
+	}
+	
+	&--start {
+		left: 0;
+	}
+	
+	&--end {
+		bottom: 0;
+		right: 0;
+	}
+}

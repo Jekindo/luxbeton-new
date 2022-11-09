@@ -515,7 +515,8 @@
             <section class="advantages section">
                 <div class="container section__container">
                     <div class="title-wrapper">
-                        <h2 class="section-title section-title--dark advantages__section-title">
+                        <h2
+                            class="section-title section-title--dark advantages__section-title section__section-title">
                             <span class="section-title__frame">
                                 Чем наши барбекю <br />
                                 комплексы
@@ -569,30 +570,30 @@
                                         сосед) и 15-20 минут на один модуль! Собирается, как
                                         «Взрослое Лего» по системе Шип-Паз!
                                     </p>
-                                    <picture class="advantages__image">
-                                        <source
-                                            srcset="
-                                                ./images/advantages/wood-puzzle-320.avif   320w,
-                                                ./images/advantages/wood-puzzle-640.avif   640w,
-                                                ./images/advantages/wood-puzzle-960.avif   960w,
-                                                ./images/advantages/wood-puzzle-1280.avif 1280w,
-                                                ./images/advantages/wood-puzzle-1920.avif 1920w
-                                            "
-                                            sizes="(min-width: 1024px) 9vw, (min-width: 768px) 18vw, 36vw"
-                                            type="image/avif" />
-                                        <img
-                                            srcset="
-                                                ./images/advantages/wood-puzzle-320.png   320w,
-                                                ./images/advantages/wood-puzzle-640.png   640w,
-                                                ./images/advantages/wood-puzzle-960.png   960w,
-                                                ./images/advantages/wood-puzzle-1280.png 1280w,
-                                                ./images/advantages/wood-puzzle-1920.png 1920w
-                                            "
-                                            sizes="(min-width: 1024px) 9vw, (min-width: 768px) 18vw, 36vw"
-                                            src="./images/advantages/wood-puzzle-320.png"
-                                            alt="Деревянные блоки для сборки" />
-                                    </picture>
                                 </div>
+                                <picture class="advantages__image">
+                                    <source
+                                        srcset="
+                                            ./images/advantages/wood-puzzle-320.avif   320w,
+                                            ./images/advantages/wood-puzzle-640.avif   640w,
+                                            ./images/advantages/wood-puzzle-960.avif   960w,
+                                            ./images/advantages/wood-puzzle-1280.avif 1280w,
+                                            ./images/advantages/wood-puzzle-1920.avif 1920w
+                                        "
+                                        sizes="(min-width: 1024px) 9vw, (min-width: 768px) 18vw, 36vw"
+                                        type="image/avif" />
+                                    <img
+                                        srcset="
+                                            ./images/advantages/wood-puzzle-320.png   320w,
+                                            ./images/advantages/wood-puzzle-640.png   640w,
+                                            ./images/advantages/wood-puzzle-960.png   960w,
+                                            ./images/advantages/wood-puzzle-1280.png 1280w,
+                                            ./images/advantages/wood-puzzle-1920.png 1920w
+                                        "
+                                        sizes="(min-width: 1024px) 9vw, (min-width: 768px) 18vw, 36vw"
+                                        src="./images/advantages/wood-puzzle-320.png"
+                                        alt="Деревянные блоки для сборки" />
+                                </picture>
                             </div>
                             <div class="advantages__item advantages__item--light">
                                 <div class="advantages__item-body">
@@ -610,7 +611,7 @@
                                             ./images/advantages/module-1280.avif 1280w,
                                             ./images/advantages/module-1920.avif 1920w
                                         "
-                                        sizes="(min-width: 1024px) 15vw,(min-width: 768px) 20vw, 40vw"
+                                        sizes="(min-width: 1330px) 195px, (min-width: 1024px) 15vw,(min-width: 768px) 20vw, 40vw"
                                         type="image/avif" />
                                     <img
                                         srcset="
@@ -620,7 +621,7 @@
                                             ./images/advantages/module-1280.png 1280w,
                                             ./images/advantages/module-1920.png 1920w
                                         "
-                                        sizes="(min-width: 1024px) 15vw,(min-width: 768px) 20vw, 40vw"
+                                        sizes="(min-width: 1330px) 195px, (min-width: 1024px) 15vw,(min-width: 768px) 20vw, 40vw"
                                         src="./images/advantages/module-320.png"
                                         alt="Модуль барбекю комплекса" />
                                 </picture>
@@ -731,14 +732,64 @@
                         </div>
                     </div>
                 </div>
+                <picture>
+                    <source
+                        srcset="
+                            ./images/advantages/dark-cloud--end-320.avif   320w,
+                            ./images/advantages/dark-cloud--end-640.avif   640w,
+                            ./images/advantages/dark-cloud--end-960.avif   960w,
+                            ./images/advantages/dark-cloud--end-1280.avif 1280w,
+                            ./images/advantages/dark-cloud--end-1920.avif 1920w
+                        "
+                        sizes="75vw"
+                        type="image/avif" />
+                    <img
+                        class="advantages__dark-cloud"
+                        srcset="
+                            ./images/advantages/dark-cloud--end-320.png   320w,
+                            ./images/advantages/dark-cloud--end-640.png   640w,
+                            ./images/advantages/dark-cloud--end-960.png   960w,
+                            ./images/advantages/dark-cloud--end-1280.png 1280w,
+                            ./images/advantages/dark-cloud--end-1920.png 1920w
+                        "
+                        sizes="75vw"
+                        src="./images/advantages/dark-cloud--end-320.png"
+                        alt="Темная туча" />
+                </picture>
             </section>
 
             <!--! Gallery -->
             <section class="gallery">
                 <div class="container">
-                    <h2 class="section-title section-title--dark gallery__section-title">
-                        <span class="section-title__frame">готовые комплексы барбекю</span>
-                    </h2>
+                    <div class="title-wrapper">
+                        <h2 class="section-title section-title--dark gallery__section-title">
+                            <span class="section-title__frame">готовые комплексы барбекю</span>
+                        </h2>
+                        <picture>
+                            <source
+                                srcset="
+                                    ./images/gallery/dark-cloud--start-320.avif   320w,
+                                    ./images/gallery/dark-cloud--start-640.avif   640w,
+                                    ./images/gallery/dark-cloud--start-960.avif   960w,
+                                    ./images/gallery/dark-cloud--start-1280.avif 1280w,
+                                    ./images/gallery/dark-cloud--start-1920.avif 1920w
+                                "
+                                sizes="(min-width: 1024px) 50vw, 60vw"
+                                type="image/avif" />
+                            <img
+                                class="gallery__dark-cloud"
+                                srcset="
+                                    ./images/gallery/dark-cloud--start-320.png   320w,
+                                    ./images/gallery/dark-cloud--start-640.png   640w,
+                                    ./images/gallery/dark-cloud--start-960.png   960w,
+                                    ./images/gallery/dark-cloud--start-1280.png 1280w,
+                                    ./images/gallery/dark-cloud--start-1920.png 1920w
+                                "
+                                sizes="(min-width: 1024px) 50vw, 60vw"
+                                src="./images/gallery/dark-cloud--start-320.png"
+                                alt="Темная туча" />
+                        </picture>
+                    </div>
                     Слайдер...
                 </div>
             </section>
@@ -763,6 +814,30 @@
                         <a class="button" href="">пройти тест</a>
                     </div>
                 </div>
+                <picture>
+                    <source
+                        srcset="
+                            ./images/design/dark-cloud--end-320.avif   320w,
+                            ./images/design/dark-cloud--end-640.avif   640w,
+                            ./images/design/dark-cloud--end-960.avif   960w,
+                            ./images/design/dark-cloud--end-1280.avif 1280w,
+                            ./images/design/dark-cloud--end-1920.avif 1920w
+                        "
+                        sizes="60vw"
+                        type="image/avif" />
+                    <img
+                        class="design__dark-cloud"
+                        srcset="
+                            ./images/design/dark-cloud--end-320.png   320w,
+                            ./images/design/dark-cloud--end-640.png   640w,
+                            ./images/design/dark-cloud--end-960.png   960w,
+                            ./images/design/dark-cloud--end-1280.png 1280w,
+                            ./images/design/dark-cloud--end-1920.png 1920w
+                        "
+                        sizes="60vw"
+                        src="./images/design/dark-cloud--end-320.png"
+                        alt="Темная туча" />
+                </picture>
             </section>
 
             <!--! How do we work? -->
