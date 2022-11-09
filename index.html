@@ -1073,29 +1073,29 @@
                         name="get_example"
                         autocomplete="on">
                         <picture>
-                                <source
-                                    srcset="
-                                        ./images/form/catalog-book-320.avif   320w,
-                                        ./images/form/catalog-book-640.avif   640w,
-                                        ./images/form/catalog-book-960.avif   960w,
-                                        ./images/form/catalog-book-1280.avif 1280w,
-                                        ./images/form/catalog-book-1920.avif 1920w
-                                    "
-                                    sizes="(min-width: 1024px) 40vw, (min-width: 768px) 50vw, 100vw"
-                                    type="image/avif" />
-                                <img
-                                    class="get-example__image"
-                                    srcset="
-                                        ./images/form/catalog-book-320.png   320w,
-                                        ./images/form/catalog-book-640.png   640w,
-                                        ./images/form/catalog-book-960.png   960w,
-                                        ./images/form/catalog-book-1280.png 1280w,
-                                        ./images/form/catalog-book-1920.png 1920w
-                                    "
-                                    src="./images/form/catalog-book-320.png"
-                                    sizes="(min-width: 1024px) 40vw, (min-width: 768px) 50vw, 100vw"
-                                    alt="Журнал-каталог" />
-                            </picture>
+                            <source
+                                srcset="
+                                    ./images/form/catalog-book-320.avif   320w,
+                                    ./images/form/catalog-book-640.avif   640w,
+                                    ./images/form/catalog-book-960.avif   960w,
+                                    ./images/form/catalog-book-1280.avif 1280w,
+                                    ./images/form/catalog-book-1920.avif 1920w
+                                "
+                                sizes="(min-width: 1024px) 40vw, (min-width: 768px) 50vw, 100vw"
+                                type="image/avif" />
+                            <img
+                                class="get-example__image"
+                                srcset="
+                                    ./images/form/catalog-book-320.png   320w,
+                                    ./images/form/catalog-book-640.png   640w,
+                                    ./images/form/catalog-book-960.png   960w,
+                                    ./images/form/catalog-book-1280.png 1280w,
+                                    ./images/form/catalog-book-1920.png 1920w
+                                "
+                                src="./images/form/catalog-book-320.png"
+                                sizes="(min-width: 1024px) 40vw, (min-width: 768px) 50vw, 100vw"
+                                alt="Журнал-каталог" />
+                        </picture>
                         <!-- <img
                             class="get-example__image"
                             src="./images/form/catalog-book-320.png"
@@ -1174,11 +1174,22 @@
             <section class="location">
                 <div class="container">
                     <!-- карта -->
-                    <!--  -->
+                    <div class="location__map">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2539.762363835689!2d30.509441815952997!3d50.46414969425833!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40d4ce6a4b960633%3A0x901cf2d98ec0a100!2z0YPQuy4g0JLQtdGA0YXQvdC40Lkg0JLQsNC7LCAxNiwg0JrQuNC10LIsIDAyMDAw!5e0!3m2!1sru!2sua!4v1668021242984!5m2!1sru!2sua"
+                            width="100%"
+                            height="100%"
+                            style="border: 0; border-radius: 25px"
+                            allowfullscreen
+                            loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+
+                    <!-- Card -->
                     <div class="location__card">
-                        <h2 class="location__title">где мы находимся</h2>
+                        <h2 class="location__card-headline">где мы находимся</h2>
                         <address class="location__address">
-                            <svg width="31" height="31">
+                            <svg class="location__icon" width="31" height="31">
                                 <use href="./images/icons/svg-sprite-optimized.svg#icon-gps"></use>
                             </svg>
                             г. Название, ул. Название, оф. 000

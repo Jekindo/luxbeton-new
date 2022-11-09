@@ -121,6 +121,23 @@
     }
 }
 
+//! Bounce
+
+@keyframes bounce {
+    0%,
+    50%,
+    80%,
+    100% {
+        transform: translateY(0);
+    }
+    70% {
+        transform: translateY(-6px);
+    }
+    90% {
+        transform: translateY(-3px);
+    }
+}
+
 // @keyframes shadow-pulse {
 //     0% {
 //         box-shadow: 0px 6px 25px get-color("button-shadow");

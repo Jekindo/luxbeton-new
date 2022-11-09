@@ -2,8 +2,7 @@
     position: relative;
 
     max-width: 70%;
-    padding: 45px 0;
-
+    padding-bottom: 45px;
 
     @include for-size(laptop) {
         border-radius: $card-border-radius;
@@ -37,9 +36,20 @@
         padding: 20px 28px;
 
         border-radius: 60px;
+		border: 2px solid rgb(0 0 0 / 50%);
 
         background-color: #fff;
         font-size: 18px;
+
+		transition: border $transition-duration $ttf;
+		
+		.get-example-form__field:hover & {
+			border-color: get-color('accent');
+		}
+
+		&:focus {
+			border-color: get-color('accent');
+		}
     }
 
     &__label {
@@ -91,15 +101,13 @@
 }
 
 .get-example-form__inner {
-   
-
     @include for-size(laptop) {
         max-width: 420px;
     }
 
     @include for-size(until-laptop) {
-		position: relative;
-		
+        position: relative;
+
         padding-top: 45px;
         padding-bottom: 45px;
     }

@@ -1,0 +1,73 @@
+.location {
+    position: relative;
+    z-index: 1;
+
+    min-height: 550px;
+
+    @include for-size(until-desktop) {
+        padding-top: 55px;
+    }
+
+    &__card {
+        display: inline-block;
+        max-width: 600px;
+        padding: 40px 24px 35px;
+
+        border-radius: $card-mobile-border-radius;
+
+        background-color: get-color("accent");
+
+        @include for-size(tablet) {
+            padding: 60px 45px 70px; // Верх-левоправо-низ
+
+            border-radius: $card-border-radius;
+        }
+
+        @include for-size(desktop) {
+            position: absolute;
+            top: 50%;
+            z-index: 1;
+            transform: translateY(-50%);
+        }
+    }
+
+    &__card-headline {
+        margin-bottom: 24px;
+
+        text-transform: uppercase;
+        @include font(700, 36px, 1.15);
+
+        @include for-size(laptop) {
+            font-size: 44px;
+        }
+    }
+
+    &__address {
+        @include aligned-flex;
+        column-gap: 12px;
+
+        font-style: normal;
+        @include font(500, 18px, 1.27);
+    }
+
+	&__icon {
+		animation: bounce 2000ms $ttf infinite;
+
+		.location:hover &{
+			animation: none;
+		}
+	}
+	
+    &__map {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+
+        width: 100%;
+        height: 100%;
+        padding: 10px;
+
+        background-color: #fff;
+    }
+}
