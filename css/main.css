@@ -194,6 +194,11 @@ body {
   margin-left: auto;
   margin-right: auto;
 }
+@media screen and (max-width: 767px) {
+  .container {
+    max-width: 480px;
+  }
+}
 
 .visually-hidden {
   position: absolute;
@@ -364,14 +369,6 @@ body {
 @media screen and (min-width: 768px) {
   .section__section-title {
     margin-bottom: 50px;
-  }
-}
-
-@media screen and (max-width: 767px) {
-  .section__container {
-    max-width: 480px;
-    margin-left: auto;
-    margin-right: auto;
   }
 }
 
@@ -1990,9 +1987,9 @@ body {
   background-image: -webkit-gradient(linear, left top, right top, from(rgba(22, 22, 22, 0.6)), to(rgba(22, 22, 22, 0.6))), image-set(url(../images/design/design-bg-mobile.png) 1x, url(../images/design/design-bg-mobile@2x.png) 2x);
   background-image: linear-gradient(to right, rgba(22, 22, 22, 0.6), rgba(22, 22, 22, 0.6)), -webkit-image-set(url(../images/design/design-bg-mobile.png) 1x, url(../images/design/design-bg-mobile@2x.png) 2x);
   background-image: linear-gradient(to right, rgba(22, 22, 22, 0.6), rgba(22, 22, 22, 0.6)), image-set(url(../images/design/design-bg-mobile.png) 1x, url(../images/design/design-bg-mobile@2x.png) 2x);
-  background-position: center right;
   background-repeat: no-repeat;
   background-size: contain;
+  background-position: bottom right;
 }
 @media screen and (min-width: 768px) {
   .design__inner {

@@ -20,9 +20,9 @@
                 url(../images/design/design-bg-mobile.png) 1x,
                 url(../images/design/design-bg-mobile@2x.png) 2x
             );
-        background-position: center right;
         background-repeat: no-repeat;
         background-size: contain;
+        background-position: bottom right;
 
         @include for-size(tablet) {
             padding-top: 100px;
@@ -71,7 +71,7 @@
         }
 
         @include for-size(laptop) {
-			transform: translateY(-50%);
+            transform: translateY(-50%);
         }
     }
 }

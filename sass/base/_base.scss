@@ -12,6 +12,10 @@ body {
 	padding-right: 15px;
 	margin-left: auto;
 	margin-right: auto;
+
+	@include for-size(mobile-only) {
+		max-width: 480px;
+	}
 }
 
 .visually-hidden {
