@@ -2460,10 +2460,6 @@ body {
   -webkit-animation: bounce 2000ms cubic-bezier(0.4, 0, 0.2, 1) infinite;
           animation: bounce 2000ms cubic-bezier(0.4, 0, 0.2, 1) infinite;
 }
-.location:hover .location__icon {
-  -webkit-animation: none;
-          animation: none;
-}
 .location__map {
   position: absolute;
   top: 0;
@@ -2487,8 +2483,24 @@ body {
 .page-footer__row {
   text-align: center;
 }
-.page-footer__logo {
-  margin-bottom: 40px;
+@media screen and (min-width: 1330px) {
+  .page-footer__row {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+}
+@media screen and (min-width: 768px) {
+  .page-footer__logo {
+    -ms-flex-item-align: start;
+        align-self: flex-start;
+  }
 }
 .page-footer__site-nav {
   display: -webkit-box;
@@ -2496,8 +2508,21 @@ body {
   display: flex;
   -ms-flex-pack: distribute;
       justify-content: space-around;
-  margin-bottom: 30px;
   text-align: left;
+}
+@media screen and (min-width: 768px) {
+  .page-footer__site-nav {
+    -webkit-column-gap: 70px;
+       -moz-column-gap: 70px;
+            column-gap: 70px;
+  }
+}
+@media screen and (min-width: 1330px) {
+  .page-footer__site-nav {
+    -webkit-column-gap: 40px;
+       -moz-column-gap: 40px;
+            column-gap: 40px;
+  }
 }
 .page-footer__item:not(:last-child) {
   margin-bottom: 15px;
@@ -2507,18 +2532,56 @@ body {
     margin-bottom: 8px;
   }
 }
-.page-footer__message {
-  margin-bottom: 25px;
+@media screen and (max-width: 767px) {
+  .page-footer__logo {
+    margin-bottom: 40px;
+  }
+  .page-footer__site-nav {
+    margin-bottom: 30px;
+  }
+  .page-footer__message {
+    margin-bottom: 25px;
+  }
+  .page-footer__schedule {
+    margin-bottom: 30px;
+  }
+  .page-footer__company-phone {
+    margin-bottom: 45px;
+  }
 }
 .page-footer__message-action {
   margin-bottom: 10px;
 }
-.page-footer__schedule {
-  margin-bottom: 30px;
+@media screen and (min-width: 1330px) {
+  .page-footer__policy {
+    text-align: right;
+  }
 }
-.page-footer__company-phone {
-  margin-bottom: 45px;
+@media screen and (min-width: 768px) {
+  .page-footer__column {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+  }
 }
+@media screen and (min-width: 768px) and (max-width: calc(1330px - 1px)) {
+  .page-footer__column {
+    margin-bottom: 50px;
+  }
+}
+@media screen and (min-width: 1330px) {
+  .page-footer__column {
+    -webkit-column-gap: 65px;
+       -moz-column-gap: 65px;
+            column-gap: 65px;
+  }
+}
+
 .page-footer__link {
   color: inherit;
   font-size: 18px;
@@ -2527,6 +2590,22 @@ body {
 }
 .page-footer__link:hover, .page-footer__link:focus {
   color: #929292;
+}
+
+@media screen and (min-width: 1330px) {
+  .page-footer__company-phone {
+    margin-bottom: 10px;
+  }
+}
+@media screen and (max-width: calc(768px - 1px)), (min-width: 1330px) {
+  .page-footer__company-phone--center {
+    display: none;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: calc(1330px - 1px)) {
+  .page-footer__company-phone--end {
+    display: none;
+  }
 }
 
 .page-footer__policy-link {

@@ -7,19 +7,32 @@
     }
 
     &__row {
-		text-align: center;
+        text-align: center;
+
+        @include for-size(desktop) {
+            @include centered-flex(flex, center, space-between);
+        }
     }
 
     &__logo {
-        margin-bottom: 40px;
+        @include for-size(tablet) {
+            align-self: flex-start;
+        }
     }
 
     &__site-nav {
         display: flex;
         justify-content: space-around;
-        margin-bottom: 30px;
 
-		text-align: left;
+        text-align: left;
+
+        @include for-size(tablet) {
+            column-gap: 70px;
+        }
+
+        @include for-size(desktop) {
+            column-gap: 40px;
+        }
     }
 
     &__list {
@@ -36,23 +49,48 @@
         }
     }
 
-    &__message {
-        margin-bottom: 25px;
+    @include for-size(mobile-only) {
+        &__logo {
+            margin-bottom: 40px;
+        }
+
+        &__site-nav {
+            margin-bottom: 30px;
+        }
+
+        &__message {
+            margin-bottom: 25px;
+        }
+        &__schedule {
+            margin-bottom: 30px;
+        }
+        &__company-phone {
+            margin-bottom: 45px;
+        }
     }
 
     &__message-action {
         margin-bottom: 10px;
     }
 
-    &__schedule {
-        margin-bottom: 30px;
-    }
-
-    &__company-phone {
-        margin-bottom: 45px;
-    }
-
     &__policy {
+		@include for-size(desktop) {
+			text-align: right;
+		}
+    }
+
+    &__column {
+        @include for-size(tablet) {
+            @include centered-flex(flex, center, space-around);
+        }
+
+        @media screen and (min-width: $tablet) and (max-width: calc(#{$desktop} - 1px)) {
+            margin-bottom: 50px;
+        }
+
+		@include for-size(desktop) {
+			column-gap: 65px;
+		}
     }
 }
 
@@ -68,34 +106,53 @@
     }
 }
 
+.page-footer__company-phone {
+	@include for-size(desktop) {
+		margin-bottom: 10px;
+	}
+	
+	
+    &--center {
+        @media screen and (max-width: calc(#{$tablet} - 1px)) , (min-width: $desktop) {
+            display: none;
+        }
+    }
+
+    &--end {
+        @media screen and (min-width: $tablet) and (max-width: calc(#{$desktop} - 1px)) {
+            display: none;
+        }
+    }
+}
+
 .page-footer__policy-link {
     display: block;
 
-	color: get-color('footer-text');
-	font-size: 14px;
-	
-	&--accent {
-		color: get-color('made-by');
-		text-decoration: underline;
-		font-size: 16px;
-	}
-	
-	&:not(:last-child) {
-		margin-bottom: 8px;
-	}
+    color: get-color("footer-text");
+    font-size: 14px;
 
-	&:hover,
-	&:focus {
-		color: get-color('primary-white');
-		text-decoration: underline;
-	}
+    &--accent {
+        color: get-color("made-by");
+        text-decoration: underline;
+        font-size: 16px;
+    }
+
+    &:not(:last-child) {
+        margin-bottom: 8px;
+    }
+
+    &:hover,
+    &:focus {
+        color: get-color("primary-white");
+        text-decoration: underline;
+    }
 }
 
 //! schedule
 .schedule {
     position: relative;
 
-	display: inline-block;
+    display: inline-block;
 
     &::before {
         @extend %online-icon;
@@ -107,7 +164,7 @@
 }
 
 .schedule__item {
-	margin-bottom: 0;
+    margin-bottom: 0;
 
     font-size: 14px;
     letter-spacing: 0.05em;
