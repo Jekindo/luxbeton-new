@@ -1,13 +1,3 @@
-.advantages__list, .catalog__list, .features__list, .hero__descr-list, .site-nav {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-
-.control-menu__button, .control-menu__button-switch, .button, .menu-button {
-  border: none;
-}
-
 @-webkit-keyframes gradient {
   0% {
     background-position: 0 50%;
@@ -19,7 +9,6 @@
     background-position: 0 50%;
   }
 }
-
 @keyframes gradient {
   0% {
     background-position: 0 50%;
@@ -49,22 +38,22 @@
 }
 @-webkit-keyframes pulse {
   0% {
-    -webkit-transform: scaleX(1);
-            transform: scaleX(1);
+    -webkit-transform: scaleX(1) translateY(-50%);
+            transform: scaleX(1) translateY(-50%);
   }
   100% {
-    -webkit-transform: scale3d(1.05, 1.05, 1.05);
-            transform: scale3d(1.05, 1.05, 1.05);
+    -webkit-transform: scaleX(1.05) translateY(-50%);
+            transform: scaleX(1.05) translateY(-50%);
   }
 }
 @keyframes pulse {
   0% {
-    -webkit-transform: scaleX(1);
-            transform: scaleX(1);
+    -webkit-transform: scaleX(1) translateY(-50%);
+            transform: scaleX(1) translateY(-50%);
   }
   100% {
-    -webkit-transform: scale3d(1.05, 1.05, 1.05);
-            transform: scale3d(1.05, 1.05, 1.05);
+    -webkit-transform: scaleX(1.05) translateY(-50%);
+            transform: scaleX(1.05) translateY(-50%);
   }
 }
 @-webkit-keyframes flash {
@@ -191,6 +180,46 @@
             transform: translateY(-3px);
   }
 }
+.page-footer__list, .advantages__list, .catalog__list, .features__list, .hero__descr-list, .site-nav {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.control-menu__button, .control-menu__button-switch, .button, .menu-button {
+  border: none;
+}
+
+.schedule::before, .message-action__label::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: -15px;
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #0d663b;
+  -webkit-animation: color-pulse 1000ms 750ms infinite alternate, pulse 1000ms 750ms infinite alternate;
+          animation: color-pulse 1000ms 750ms infinite alternate, pulse 1000ms 750ms infinite alternate;
+}
+@-webkit-keyframes color-pulse {
+  0% {
+    background-color: #0d663b;
+  }
+  100% {
+    background-color: #00b35c;
+  }
+}
+@keyframes color-pulse {
+  0% {
+    background-color: #0d663b;
+  }
+  100% {
+    background-color: #00b35c;
+  }
+}
+
 a {
   text-decoration: none;
 }
@@ -498,6 +527,9 @@ body {
     width: 103px;
   }
 }
+.logo__image--big {
+  width: 103px;
+}
 
 .page-header {
   position: absolute;
@@ -566,12 +598,11 @@ body {
             flex-direction: column;
   }
 }
-
-.message {
+.page-header__message {
   margin-bottom: 40px;
 }
 @media screen and (min-width: 1024px) {
-  .message {
+  .page-header__message {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -581,9 +612,23 @@ body {
   }
 }
 @media screen and (min-width: 1330px) {
-  .message {
+  .page-header__message {
     margin-bottom: 7px;
   }
+}
+@media screen and (max-width: 1023px) {
+  .page-header__message-action {
+    margin-bottom: 15px;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .page-header__message-action {
+    margin-right: 12px;
+  }
+}
+
+.message {
+  text-align: center;
 }
 .message__icon {
   width: 45px;
@@ -603,51 +648,20 @@ body {
   }
 }
 
-.message__action {
+.message-action {
   display: block;
   -ms-flex-negative: 0;
       flex-shrink: 0;
   font-size: 16px;
 }
-@media screen and (max-width: 1023px) {
-  .message__action {
-    margin-bottom: 15px;
-  }
-}
 @media screen and (min-width: 1024px) {
-  .message__action {
-    margin-right: 12px;
+  .message-action {
     font-size: 12px;
   }
 }
-.message__action::before {
-  content: "";
-  display: inline-block;
-  width: 8px;
-  height: 8px;
-  margin-right: 11px;
-  border-radius: 50%;
-  background-color: #0d663b;
-  -webkit-animation: color-pulse 1000ms 750ms infinite alternate, pulse 1000ms 750ms infinite alternate;
-          animation: color-pulse 1000ms 750ms infinite alternate, pulse 1000ms 750ms infinite alternate;
+.message-action__label {
+  position: relative;
 }
-@-webkit-keyframes color-pulse {
-  0% {
-    background-color: #0d663b;
-  }
-  100% {
-    background-color: #00b35c;
-  }
-}
-@keyframes color-pulse {
-  0% {
-    background-color: #0d663b;
-  }
-  100% {
-    background-color: #00b35c;
-  }
-}
-
 .message__link {
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
@@ -752,6 +766,7 @@ body {
 }
 
 .company-phone {
+  display: inline-block;
   color: inherit;
   font-weight: 700;
   font-size: 26px;
@@ -2458,4 +2473,91 @@ body {
   height: 100%;
   padding: 10px;
   background-color: #fff;
+}
+
+.page-footer {
+  padding-top: 60px;
+  padding-bottom: 60px;
+}
+@media screen and (max-width: 1023px) {
+  .page-footer {
+    padding-bottom: 90px;
+  }
+}
+.page-footer__row {
+  text-align: center;
+}
+.page-footer__logo {
+  margin-bottom: 40px;
+}
+.page-footer__site-nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  margin-bottom: 30px;
+  text-align: left;
+}
+.page-footer__item:not(:last-child) {
+  margin-bottom: 15px;
+}
+@media screen and (min-width: 1024px) {
+  .page-footer__item:not(:last-child) {
+    margin-bottom: 8px;
+  }
+}
+.page-footer__message {
+  margin-bottom: 25px;
+}
+.page-footer__message-action {
+  margin-bottom: 10px;
+}
+.page-footer__schedule {
+  margin-bottom: 30px;
+}
+.page-footer__company-phone {
+  margin-bottom: 45px;
+}
+.page-footer__link {
+  color: inherit;
+  font-size: 18px;
+  -webkit-transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.page-footer__link:hover, .page-footer__link:focus {
+  color: #929292;
+}
+
+.page-footer__policy-link {
+  display: block;
+  color: #929292;
+  font-size: 14px;
+}
+.page-footer__policy-link--accent {
+  color: #B4B4B4;
+  text-decoration: underline;
+  font-size: 16px;
+}
+.page-footer__policy-link:not(:last-child) {
+  margin-bottom: 8px;
+}
+.page-footer__policy-link:hover, .page-footer__policy-link:focus {
+  color: #fff;
+  text-decoration: underline;
+}
+
+.schedule {
+  position: relative;
+}
+.schedule__date {
+  font-weight: 700;
+}
+
+.schedule__item {
+  font-size: 14px;
+  letter-spacing: 0.05em;
+}
+.schedule__item:not(:last-child) {
+  margin-bottom: 5px;
 }/*# sourceMappingURL=main.css.map */

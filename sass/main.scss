@@ -1,9 +1,9 @@
 // Utils
 @import './utils/variables';
+@import './utils/animation-templates';
 @import './utils/functions';
 @import './utils/mixins';
 @import './utils/placeholders';
-@import './utils/animation-templates';
 
 // Base
 @import './base/reset';
@@ -30,4 +30,5 @@
 @import './components/get-example-form';
 @import './components/dark-cloud';
 @import './components/location';
+@import './components/page-footer';
 

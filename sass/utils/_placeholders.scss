@@ -1,9 +1,29 @@
 %list {
-	margin: 0;
-	padding: 0;
-	list-style: none;
+    margin: 0;
+    padding: 0;
+    list-style: none;
 }
 
 %no-border {
-	border: none;
+    border: none;
+}
+
+%online-icon {
+    content: "";
+
+	position: absolute;
+	top: 50%;
+	left: -15px;
+	
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+
+    border-radius: 50%;
+
+    background-color: get-color("online-dark");
+
+    @include color-pulse(get-color("online-dark"), get-color("online"));
+
+    animation: color-pulse 1000ms 750ms infinite alternate, pulse 1000ms 750ms infinite alternate;
 }

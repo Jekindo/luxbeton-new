@@ -43,20 +43,34 @@
             flex-direction: column;
         }
     }
+
+    &__message {
+        margin-bottom: 40px;
+
+        @include for-size(laptop) {
+            @include aligned-flex;
+        }
+
+        @include for-size(desktop) {
+            margin-bottom: 7px;
+        }
+    }
+
+    &__message-action {
+        @include for-size(until-laptop) {
+            margin-bottom: 15px;
+        }
+
+        @include for-size(laptop) {
+            margin-right: 12px;
+        }
+    }
 }
 
 //! Message
 
 .message {
-    margin-bottom: 40px;
-
-    @include for-size(laptop) {
-        @include aligned-flex;
-    }
-
-    @include for-size(desktop) {
-        margin-bottom: 7px;
-    }
+    text-align: center;
 
     &__icon {
         width: 45px;
@@ -76,37 +90,23 @@
     }
 }
 
-.message__action {
+.message-action {	
     display: block;
     flex-shrink: 0;
 
     font-size: 16px;
 
-    @include for-size(until-laptop) {
-        margin-bottom: 15px;
-    }
-
     @include for-size(laptop) {
-        margin-right: 12px;
         font-size: 12px;
     }
 
-    &::before {
-        content: "";
-
-        display: inline-block;
-        width: 8px;
-        height: 8px;
-        margin-right: 11px;
-
-        border-radius: 50%;
-
-        background-color: get-color("online-dark");
-
-        @include color-pulse(get-color("online-dark"), get-color("online"));
-
-        animation: color-pulse 1000ms 750ms infinite alternate, pulse 1000ms 750ms infinite alternate;
-    }
+	&__label {
+		position: relative;
+		
+		&::before {
+			@extend %online-icon;
+		 }
+	}
 }
 
 .message__link {
@@ -157,17 +157,19 @@
 //! Company Phone Number
 
 .company-phone {
+	display: inline-block;
+	
     color: inherit;
     @include font(700, 26px, inherit);
 
-	animation: headShake 3100ms 750ms ease-in-out infinite;
-	transition: color $transition-duration $ttf;
+    animation: headShake 3100ms 750ms ease-in-out infinite;
+    transition: color $transition-duration $ttf;
 
-	&:hover {
-		animation-play-state: paused;
-		color: #ffeed9;
-	}
-	
+    &:hover {
+        animation-play-state: paused;
+        color: #ffeed9;
+    }
+
     @include for-size(laptop) {
         font-size: 22px;
     }

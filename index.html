@@ -76,8 +76,10 @@
 
                         <div class="page-header__contacts">
                             <!-- We are online -->
-                            <div class="message">
-                                <b class="message__action">Мы онлайн, пишите</b>
+                            <div class="message page-header__message">
+                                <b class="message-action page-header__message-action">
+                                    <span class="message-action__label">Мы онлайн, пишите</span>
+                                </b>
                                 <a class="message__link" href="" aria-label="Whatsapp">
                                     <svg class="message__icon">
                                         <use
@@ -1202,64 +1204,93 @@
         <!--! Footer -->
         <footer class="page-footer">
             <div class="container">
-                <!-- Logo -->
-                <a href="" class="logo page-footer__logo">
-                    <img src="./images/logo.png" alt="" />
-                    Luxbeton
-                </a>
-
-                <!-- Site nav -->
-                <ul class="site-nav">
-                    <li class="site-nav__item">
-                        <a href="" class="site-nav__link">Главная</a>
-                    </li>
-                    <li class="site-nav__item">
-                        <a href="" class="site-nav__link">Каталог</a>
-                    </li>
-                    <li class="site-nav__item">
-                        <a href="" class="site-nav__link">Фотогалерея</a>
-                    </li>
-                    <li class="site-nav__item">
-                        <a href="" class="site-nav__link">Акции</a>
-                    </li>
-                    <li class="site-nav__item">
-                        <a href="" class="site-nav__link">О компании</a>
-                    </li>
-                    <li class="site-nav__item">
-                        <a href="" class="site-nav__link">Проекты</a>
-                    </li>
-                    <li class="site-nav__item">
-                        <a href="" class="site-nav__link">Контакты</a>
-                    </li>
-                </ul>
-
-                <!-- We are online -->
-                <div class="message">
-                    <b class="message__action">Мы онлайн, пишите</b>
-                    <a class="message__link" href="" aria-label="Whatsapp">
-                        <svg class="message__icon">
-                            <use href="./images/icons/svg-sprite-optimized.svg#icon-whatsapp"></use>
-                        </svg>
+                <div class="page-footer__row">
+                    <!-- Logo -->
+                    <a href="" class="logo page-footer__logo">
+                        <img
+                            class="logo__image logo__image--big"
+                            srcset="./images/logo.png 1x, ./images/logo@2x.png 2x"
+                            src="./images/logo.png"
+                            alt="Логотип компании" />
+                        Luxbeton
                     </a>
-                    <a class="message__link" href="" aria-label="Telegram">
-                        <svg class="message__icon">
-                            <use href="./images/icons/svg-sprite-optimized.svg#icon-telegram"></use>
-                        </svg>
-                    </a>
-                </div>
 
-                <!-- Company Phone number -->
-                <a class="company-phone" href="tel:+380976666622">
-                    <svg class="company-phone__icon" width="33" height="33">
-                        <use href="./images/icons/svg-sprite-optimized.svg#icon-phone"></use>
-                    </svg>
-                    +38 097 - 666 - 66 - 22
-                </a>
+                    <div class="page-footer__site-nav">
+                        <!-- Site nav -->
+                        <ul class="page-footer__list">
+                            <li class="page-footer__item">
+                                <a href="" class="page-footer__link">Главная</a>
+                            </li>
+                            <li class="page-footer__item">
+                                <a href="" class="page-footer__link">Каталог</a>
+                            </li>
+                            <li class="page-footer__item">
+                                <a href="" class="page-footer__link">Фотогалерея</a>
+                            </li>
+                            <li class="page-footer__item">
+                                <a href="" class="page-footer__link">Акции</a>
+                            </li>
+                        </ul>
+                        <ul class="page-footer__list">
+                            <li class="page-footer__item">
+                                <a href="" class="page-footer__link">О компании</a>
+                            </li>
+                            <li class="page-footer__item">
+                                <a href="" class="page-footer__link">Проекты</a>
+                            </li>
+                            <li class="page-footer__item">
+                                <a href="" class="page-footer__link">Контакты</a>
+                            </li>
+                        </ul>
+                    </div>
 
-                <div>
-                    <a href="">Сделано VTOPESAIT</a>
-                    <a href="">Политика конфиденциальности</a>
-                    <a href="">Соглашение на обработку персональных данных</a>
+                    <!-- We are online -->
+                    <div class="message page-footer__message">
+                        <b class="message-action page-footer__message-action">
+                            <span class="message-action__label">Мы онлайн, пишите</span>
+                        </b>
+                        <a class="message__link" href="" aria-label="Whatsapp">
+                            <svg class="message__icon">
+                                <use
+                                    href="./images/icons/svg-sprite-optimized.svg#icon-whatsapp"></use>
+                            </svg>
+                        </a>
+                        <a class="message__link" href="" aria-label="Telegram">
+                            <svg class="message__icon">
+                                <use
+                                    href="./images/icons/svg-sprite-optimized.svg#icon-telegram"></use>
+                            </svg>
+                        </a>
+                    </div>
+
+                    <!-- schedule -->
+                    <div class="schedule page-footer__schedule">
+                        <p class="schedule__item">
+                            <span class="schedule__date">Пн-пт</span> с 9.00 до 18.30
+                        </p>
+                        <p class="schedule__item">
+                            <span class="schedule__date">Сб-вс</span> с 9.00 до 17.30
+                        </p>
+                    </div>
+
+                    <div class="page-footer__column">
+						<!-- Company Phone number -->
+						<a class="company-phone page-footer__company-phone" href="tel:+380976666622">
+							<svg class="company-phone__icon" width="33" height="33">
+								<use href="./images/icons/svg-sprite-optimized.svg#icon-phone"></use>
+							</svg>
+							097 - 666 - 66 - 22
+						</a>
+						<div class="page-footer__policy">
+							<a class="page-footer__policy-link page-footer__policy-link--accent" href="">
+													Сделано VTOPESAIT
+												</a>
+							<a class="page-footer__policy-link" href="">Политика конфиденциальности</a>
+							<a class="page-footer__policy-link" href="">
+								Соглашение на обработку персональных данных
+							</a>
+						</div>
+					</div>
                 </div>
             </div>
         </footer>

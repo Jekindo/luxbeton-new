@@ -1,0 +1,114 @@
+.page-footer {
+    padding-top: 60px;
+    padding-bottom: 60px;
+
+    @include for-size(until-laptop) {
+        padding-bottom: 90px;
+    }
+
+    &__row {
+		text-align: center;
+    }
+
+    &__logo {
+        margin-bottom: 40px;
+    }
+
+    &__site-nav {
+        display: flex;
+        justify-content: space-around;
+        margin-bottom: 30px;
+
+		text-align: left;
+    }
+
+    &__list {
+        @extend %list;
+    }
+
+    &__item {
+        &:not(:last-child) {
+            margin-bottom: 15px;
+
+            @include for-size(laptop) {
+                margin-bottom: 8px;
+            }
+        }
+    }
+
+    &__message {
+        margin-bottom: 25px;
+    }
+
+    &__message-action {
+        margin-bottom: 10px;
+    }
+
+    &__schedule {
+        margin-bottom: 30px;
+    }
+
+    &__company-phone {
+        margin-bottom: 45px;
+    }
+
+    &__policy {
+    }
+}
+
+.page-footer__link {
+    color: inherit;
+    font-size: 18px;
+
+    transition: color $transition-duration $ttf;
+
+    &:hover,
+    &:focus {
+        color: get-color("footer-text");
+    }
+}
+
+.page-footer__policy-link {
+    display: block;
+
+	color: get-color('footer-text');
+	font-size: 14px;
+	
+	&--accent {
+		color: get-color('made-by');
+		text-decoration: underline;
+		font-size: 16px;
+	}
+	
+	&:not(:last-child) {
+		margin-bottom: 8px;
+	}
+
+	&:hover,
+	&:focus {
+		color: get-color('primary-white');
+		text-decoration: underline;
+	}
+}
+
+//! schedule
+.schedule {
+    position: relative;
+
+    &::before {
+        @extend %online-icon;
+    }
+
+    &__date {
+        font-weight: 700;
+    }
+}
+
+.schedule__item {
+    font-size: 14px;
+    letter-spacing: 0.05em;
+
+    &:not(:last-child) {
+        margin-bottom: 5px;
+    }
+}

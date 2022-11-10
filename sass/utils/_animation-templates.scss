@@ -38,11 +38,11 @@
 
 @keyframes pulse {
     0% {
-        transform: scaleX(1);
+        transform: scaleX(1) translateY(-50%);
     }
 
     100% {
-        transform: scale3d(1.05, 1.05, 1.05);
+        transform: scaleX(1.05) translateY(-50%);
     }
 }
 
