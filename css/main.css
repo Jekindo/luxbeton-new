@@ -180,6 +180,26 @@
             transform: translateY(-3px);
   }
 }
+@-webkit-keyframes button {
+  0% {
+    -webkit-transform: skew(-35deg) translateX(0);
+            transform: skew(-35deg) translateX(0);
+  }
+  100% {
+    -webkit-transform: skew(-35deg) translateX(500px);
+            transform: skew(-35deg) translateX(500px);
+  }
+}
+@keyframes button {
+  0% {
+    -webkit-transform: skew(-35deg) translateX(0);
+            transform: skew(-35deg) translateX(0);
+  }
+  100% {
+    -webkit-transform: skew(-35deg) translateX(500px);
+            transform: skew(-35deg) translateX(500px);
+  }
+}
 .page-footer__list, .advantages__list, .catalog__list, .features__list, .hero__descr-list, .site-nav {
   margin: 0;
   padding: 0;
@@ -1353,20 +1373,12 @@ body {
   content: "";
   position: absolute;
   top: 0;
-  left: 0;
+  left: -50px;
   width: 40px;
   height: 100%;
   background-color: rgba(255, 237, 188, 0.5);
-  -webkit-transform: skew(-35deg) translateX(-60px);
-          transform: skew(-35deg) translateX(-60px);
-  -webkit-transition: -webkit-transform 1s cubic-bezier(0.4, 0, 0.2, 1);
-  transition: -webkit-transform 1s cubic-bezier(0.4, 0, 0.2, 1);
-  transition: transform 1s cubic-bezier(0.4, 0, 0.2, 1);
-  transition: transform 1s cubic-bezier(0.4, 0, 0.2, 1), -webkit-transform 1s cubic-bezier(0.4, 0, 0.2, 1);
-}
-.button:hover::before {
-  -webkit-transform: skew(-35deg) translateX(500px);
-          transform: skew(-35deg) translateX(500px);
+  -webkit-animation: button 1s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+          animation: button 1s cubic-bezier(0.4, 0, 0.2, 1) infinite;
 }
 
 .features {

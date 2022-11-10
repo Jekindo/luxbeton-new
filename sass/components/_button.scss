@@ -47,18 +47,13 @@
 
         position: absolute;
         top: 0;
-        left: 0;
+        left: -50px;
 
         width: 40px;
         height: 100%;
 
         background-color: rgba(255, 237, 188, 0.5);
 
-        transform: skew(-35deg) translateX(-60px);
-		transition: transform 1s $ttf;
-    }
-
-    &:hover::before {
-        transform: skew(-35deg) translateX(500px);
+		animation: button 1s $ttf infinite;
     }
 }
