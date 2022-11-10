@@ -36,20 +36,18 @@
         padding: 20px 28px;
 
         border-radius: 60px;
-		border: 2px solid rgb(0 0 0 / 50%);
+        border: 2px solid transparent;
 
+        outline: none;
         background-color: #fff;
         font-size: 18px;
 
-		transition: border $transition-duration $ttf;
-		
-		.get-example-form__field:hover & {
-			border-color: get-color('accent');
-		}
+        transition: border $transition-duration $ttf;
 
-		&:focus {
-			border-color: get-color('accent');
-		}
+        .get-example-form__field:hover &,
+        &:focus {
+            border-color: get-color("accent");
+        }
     }
 
     &__label {
@@ -57,12 +55,29 @@
         top: 50%;
         left: 28px;
         transform: translateY(-50%);
+        transform-origin: center left;
 
         color: get-color("primary-black");
         font-size: 17px;
 
+        transition: color $transition-duration $ttf, transform $transition-duration $ttf;
+
         @include for-size(tablet) {
             font-size: 18px;
+        }
+
+        .get-example-form__input:focus + & {
+            transform: translateY(calc(-50% - 45px)) scale(1);
+        }
+
+        .get-example-form__input:not(:placeholder-shown) + & {
+            color: get-color("primary-white");
+            transform: translateY(calc(-50% - 45px)) scale(0.8);
+        }
+
+        .get-example-form__field:hover &,
+        .get-example-form__input:focus + & {
+            color: get-color("accent");
         }
     }
 

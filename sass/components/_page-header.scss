@@ -117,7 +117,8 @@
     animation: 1500ms 750ms infinite;
     transition: transform $transition-duration $ttf, color $transition-duration $ttf;
 
-    &:hover {
+    &:hover, 
+    &:focus {
         transform: scale(1.2);
     }
 
@@ -136,7 +137,8 @@
 
         animation-name: pulse-icon-whatsapp;
 
-        &:hover {
+        &:hover, 
+        &:focus {
             color: #00e676;
         }
     }
@@ -148,7 +150,8 @@
 
         animation-name: pulse-icon-telegram;
 
-        &:hover {
+        &:hover, 
+        &:focus {
             color: #40b3e0;
         }
     }
@@ -165,7 +168,8 @@
     animation: headShake 3100ms 750ms ease-in-out infinite;
     transition: color $transition-duration $ttf;
 
-    &:hover {
+    &:hover, 
+    &:focus {
         animation-play-state: paused;
         color: #ffeed9;
     }
