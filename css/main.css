@@ -194,7 +194,7 @@
   content: "";
   position: absolute;
   top: 50%;
-  left: -15px;
+  left: -18px;
   display: inline-block;
   width: 8px;
   height: 8px;
@@ -2549,12 +2549,14 @@ body {
 
 .schedule {
   position: relative;
+  display: inline-block;
 }
 .schedule__date {
   font-weight: 700;
 }
 
 .schedule__item {
+  margin-bottom: 0;
   font-size: 14px;
   letter-spacing: 0.05em;
 }
