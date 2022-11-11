@@ -33,8 +33,8 @@
 
         height: 600px;
 
-        box-shadow: 0px 1px 3px 0px rgb(255 255 255 / 20%), 0px 1px 1px 0px rgb(255 255 255 / 14%),
-            0px 2px 1px -1px rgb(255 255 255 / 12%);
+        // box-shadow: 0px 1px 3px 0px rgb(255 255 255 / 20%), 0px 1px 1px 0px rgb(255 255 255 / 14%),
+        //     0px 2px 1px -1px rgb(255 255 255 / 12%);
     }
 
     .stock__item {
@@ -44,8 +44,25 @@
         width: 45%;
         height: 100%;
 
-		&::before 
-		
+        &::before {
+            content: "";
+
+			position: absolute;
+			top: 0;
+			left: 0;
+			z-index: 1;
+
+			width: 100%;
+			height: 100%;
+			
+            background-image: linear-gradient(
+                180deg,
+                black 0%,
+                rgba(217, 217, 217, 0) 48.44%,
+                black 100%
+            );
+        }
+
         &:not(:first-child) {
             border-left: 5px solid #212121;
         }
