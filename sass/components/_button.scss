@@ -1,5 +1,6 @@
 .button {
     position: relative;
+	overflow: hidden;
 
     display: inline-block;
     min-width: 285px;
@@ -47,13 +48,13 @@
 
         position: absolute;
         top: 0;
-        left: -50px;
+        left: -100px;
 
         width: 40px;
         height: 100%;
 
         background-color: rgba(255, 237, 188, 0.5);
 
-		animation: button 1s $ttf infinite;
+		animation: button 4000ms ease-in-out 750ms infinite;
     }
 }

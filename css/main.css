@@ -185,9 +185,13 @@
     -webkit-transform: skew(-35deg) translateX(0);
             transform: skew(-35deg) translateX(0);
   }
+  40% {
+    -webkit-transform: skew(-35deg) translateX(700px);
+            transform: skew(-35deg) translateX(700px);
+  }
   100% {
-    -webkit-transform: skew(-35deg) translateX(500px);
-            transform: skew(-35deg) translateX(500px);
+    -webkit-transform: skew(-35deg) translateX(700px);
+            transform: skew(-35deg) translateX(700px);
   }
 }
 @keyframes button {
@@ -195,9 +199,13 @@
     -webkit-transform: skew(-35deg) translateX(0);
             transform: skew(-35deg) translateX(0);
   }
+  40% {
+    -webkit-transform: skew(-35deg) translateX(700px);
+            transform: skew(-35deg) translateX(700px);
+  }
   100% {
-    -webkit-transform: skew(-35deg) translateX(500px);
-            transform: skew(-35deg) translateX(500px);
+    -webkit-transform: skew(-35deg) translateX(700px);
+            transform: skew(-35deg) translateX(700px);
   }
 }
 .page-footer__list, .advantages__list, .catalog__list, .features__list, .hero__descr-list, .site-nav {
@@ -1326,6 +1334,7 @@ body {
 
 .button {
   position: relative;
+  overflow: hidden;
   display: inline-block;
   min-width: 285px;
   padding: 22px 31px;
@@ -1373,12 +1382,12 @@ body {
   content: "";
   position: absolute;
   top: 0;
-  left: -50px;
+  left: -100px;
   width: 40px;
   height: 100%;
   background-color: rgba(255, 237, 188, 0.5);
-  -webkit-animation: button 1s cubic-bezier(0.4, 0, 0.2, 1) infinite;
-          animation: button 1s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+  -webkit-animation: button 4000ms ease-in-out 750ms infinite;
+          animation: button 4000ms ease-in-out 750ms infinite;
 }
 
 .features {

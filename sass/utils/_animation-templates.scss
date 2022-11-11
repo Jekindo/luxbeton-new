@@ -144,8 +144,12 @@
         transform: skew(-35deg) translateX(0);
     }
 
+    40% {
+        transform: skew(-35deg) translateX(700px);
+    }
+
     100% {
-        transform: skew(-35deg) translateX(500px);
+        transform: skew(-35deg) translateX(700px);
     }
 }
 
