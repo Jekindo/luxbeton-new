@@ -1,28 +1,12 @@
 .stock {
+	overflow: hidden;
+	
     &__excerpt {
-        font-size: 28px;
-    }
+        font-size: 20px;
 
-    &__title-wrapper {
-        position: relative;
-
-        display: inline-block;
-
-        // 		&::after {
-        // 			content: '';
-        //
-        // 			position: absolute;
-        // 			top: 0;
-        // 			right: 0;
-        // 			// transform: translateX(100%);
-        //
-        // 			width: 30vw;
-        // 			height: 30vw;
-        //
-        // 			outline: 1px solid tomato;
-        // 			background-image: url(../images/stock/giftbox.png);
-        // 			background-size: cover;
-        // 		}
+		@include for-size(desktop) {
+			font-size: 24px;
+		}
     }
 
     .stock__list {
@@ -31,10 +15,12 @@
         position: relative;
         overflow: hidden;
 
-        height: 600px;
+        height: 31vw;
+        min-height: 170px;
+        max-height: 600px;
 
-        // box-shadow: 0px 1px 3px 0px rgb(255 255 255 / 20%), 0px 1px 1px 0px rgb(255 255 255 / 14%),
-        //     0px 2px 1px -1px rgb(255 255 255 / 12%);
+        // box-shadow: 0px 1px 3px 0px rgb(0 0 0 / 20%), 0px 1px 1px 0px rgb(0 0 0 / 14%),
+        //     0px 2px 1px -1px rgb(0 0 0 / 12%);
     }
 
     .stock__item {
@@ -44,72 +30,99 @@
         width: 45%;
         height: 100%;
 
+        transition: transform $transition-duration $ttf;
+
         &::before {
             content: "";
 
-			position: absolute;
-			top: 0;
-			left: 0;
-			z-index: 1;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 1;
+            transform: translateX(-10%);
 
-			width: 100%;
-			height: 100%;
-			
+            width: 100%;
+            height: 100%;
+
             background-image: linear-gradient(
                 180deg,
-                black 0%,
-                rgba(217, 217, 217, 0) 48.44%,
-                black 100%
+                get-color("page-bg") 5%,
+                rgba(217, 217, 217, 0) 50%,
+                get-color("page-bg") 95%
             );
         }
 
         &:not(:first-child) {
-            border-left: 5px solid #212121;
+            border-left: 3px solid get-color("page-bg");
         }
 
         &:first-child {
-            outline: 1px solid teal;
-
             left: 0;
             transform: skew(-15deg) translate(-15%);
-
-            .stock__image {
-                transform: skew(15deg) translate(-15%);
-            }
         }
 
         &:nth-child(2) {
             left: 25%;
             transform: skew(-15deg);
-
-            .stock__image {
-                transform: skew(15deg) translate(-15%);
-            }
         }
-        //
+
         &:nth-child(3) {
             left: 50%;
             transform: skew(-15deg);
-
-            .stock__image {
-                transform: skew(15deg) translate(-15%);
-            }
         }
 
         &:last-child {
             left: 75%;
             transform: skew(-15deg);
-
-            .stock__image {
-                transform: skew(15deg) translate(-27%);
-            }
         }
     }
+}
 
-    .stock__image {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        object-position: center;
+.stock__title-wrapper {
+    position: relative;
+
+    display: inline-block;
+}
+
+.stock__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+
+    transform: skew(15deg) translate(-15%);
+    transition: filter 200ms linear;
+
+    @include for-size(laptop) {
+        filter: grayscale(0.5);
+
+        .stock__item:hover & {
+            filter: grayscale(0);
+        }
     }
+}
+
+.stock__giftbox {
+	width: 120px;
+
+    float: right;
+    shape-outside: url(../images/stock/giftbox-320.png);
+    shape-margin: 20px;
+    filter: drop-shadow(0px 0px 30px #ff9900);
+
+	@include for-size(tablet) {
+		width: 170px;
+	}
+	
+    @include for-size(laptop) {
+        position: absolute;
+        top: 50%;
+        right: -2vw;
+		z-index: 1;
+        transform: translate(100%, -50%);
+    }
+
+	@include for-size(desktop) {
+		width: 200px;
+	}
 }

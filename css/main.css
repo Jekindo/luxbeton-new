@@ -2536,23 +2536,33 @@ body {
   background-color: #fff;
 }
 
-.stock__excerpt {
-  font-size: 28px;
+.stock {
+  overflow: hidden;
 }
-.stock__title-wrapper {
-  position: relative;
-  display: inline-block;
+.stock__excerpt {
+  font-size: 20px;
+}
+@media screen and (min-width: 1330px) {
+  .stock__excerpt {
+    font-size: 24px;
+  }
 }
 .stock .stock__list {
   position: relative;
   overflow: hidden;
-  height: 600px;
+  height: 31vw;
+  min-height: 170px;
+  max-height: 600px;
 }
 .stock .stock__item {
   position: absolute;
   overflow: hidden;
   width: 45%;
   height: 100%;
+  -webkit-transition: -webkit-transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: -webkit-transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1), -webkit-transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .stock .stock__item::before {
   content: "";
@@ -2560,58 +2570,94 @@ body {
   top: 0;
   left: 0;
   z-index: 1;
+  -webkit-transform: translateX(-10%);
+          transform: translateX(-10%);
   width: 100%;
   height: 100%;
-  background-image: -webkit-gradient(linear, left top, left bottom, from(black), color-stop(48.44%, rgba(217, 217, 217, 0)), to(black));
-  background-image: linear-gradient(180deg, black 0%, rgba(217, 217, 217, 0) 48.44%, black 100%);
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(5%, #232323), color-stop(50%, rgba(217, 217, 217, 0)), color-stop(95%, #232323));
+  background-image: linear-gradient(180deg, #232323 5%, rgba(217, 217, 217, 0) 50%, #232323 95%);
 }
 .stock .stock__item:not(:first-child) {
-  border-left: 5px solid #212121;
+  border-left: 3px solid #232323;
 }
 .stock .stock__item:first-child {
-  outline: 1px solid teal;
   left: 0;
   -webkit-transform: skew(-15deg) translate(-15%);
           transform: skew(-15deg) translate(-15%);
-}
-.stock .stock__item:first-child .stock__image {
-  -webkit-transform: skew(15deg) translate(-15%);
-          transform: skew(15deg) translate(-15%);
 }
 .stock .stock__item:nth-child(2) {
   left: 25%;
   -webkit-transform: skew(-15deg);
           transform: skew(-15deg);
 }
-.stock .stock__item:nth-child(2) .stock__image {
-  -webkit-transform: skew(15deg) translate(-15%);
-          transform: skew(15deg) translate(-15%);
-}
 .stock .stock__item:nth-child(3) {
   left: 50%;
   -webkit-transform: skew(-15deg);
           transform: skew(-15deg);
-}
-.stock .stock__item:nth-child(3) .stock__image {
-  -webkit-transform: skew(15deg) translate(-15%);
-          transform: skew(15deg) translate(-15%);
 }
 .stock .stock__item:last-child {
   left: 75%;
   -webkit-transform: skew(-15deg);
           transform: skew(-15deg);
 }
-.stock .stock__item:last-child .stock__image {
-  -webkit-transform: skew(15deg) translate(-27%);
-          transform: skew(15deg) translate(-27%);
+
+.stock__title-wrapper {
+  position: relative;
+  display: inline-block;
 }
-.stock .stock__image {
+
+.stock__image {
   width: 100%;
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
   -o-object-position: center;
      object-position: center;
+  -webkit-transform: skew(15deg) translate(-15%);
+          transform: skew(15deg) translate(-15%);
+  -webkit-transition: -webkit-filter 200ms linear;
+  transition: -webkit-filter 200ms linear;
+  transition: filter 200ms linear;
+  transition: filter 200ms linear, -webkit-filter 200ms linear;
+}
+@media screen and (min-width: 1024px) {
+  .stock__image {
+    -webkit-filter: grayscale(0.5);
+            filter: grayscale(0.5);
+  }
+  .stock__item:hover .stock__image {
+    -webkit-filter: grayscale(0);
+            filter: grayscale(0);
+  }
+}
+
+.stock__giftbox {
+  width: 120px;
+  float: right;
+  shape-outside: url(../images/stock/giftbox-320.png);
+  shape-margin: 20px;
+  -webkit-filter: drop-shadow(0px 0px 30px #ff9900);
+          filter: drop-shadow(0px 0px 30px #ff9900);
+}
+@media screen and (min-width: 768px) {
+  .stock__giftbox {
+    width: 170px;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .stock__giftbox {
+    position: absolute;
+    top: 50%;
+    right: -2vw;
+    z-index: 1;
+    -webkit-transform: translate(100%, -50%);
+            transform: translate(100%, -50%);
+  }
+}
+@media screen and (min-width: 1330px) {
+  .stock__giftbox {
+    width: 200px;
+  }
 }
 
 .page-footer {
