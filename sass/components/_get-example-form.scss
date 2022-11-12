@@ -1,7 +1,7 @@
 .get-example-form {
     position: relative;
 
-    max-width: 70%;
+    // max-width: 70%;
     padding-bottom: 45px;
 
     @include for-size(laptop) {
@@ -23,7 +23,7 @@
         position: relative;
 
         display: block;
-        margin-bottom: 15px;
+        margin-bottom: 20px;
 
         @include for-size(tablet) {
             margin-bottom: 25px;
@@ -50,36 +50,7 @@
         }
     }
 
-    &__label {
-        position: absolute;
-        top: 50%;
-        left: 28px;
-        transform: translateY(-50%);
-        transform-origin: center left;
-
-        color: get-color("primary-black");
-        font-size: 17px;
-
-        transition: color $transition-duration $ttf, transform $transition-duration $ttf;
-
-        @include for-size(tablet) {
-            font-size: 18px;
-        }
-
-        .get-example-form__input:focus + & {
-            transform: translateY(calc(-50% - 45px)) scale(1);
-        }
-
-        .get-example-form__input:not(:placeholder-shown) + & {
-            color: get-color("primary-white");
-            transform: translateY(calc(-50% - 45px)) scale(0.8);
-        }
-
-        .get-example-form__field:hover &,
-        .get-example-form__input:focus + & {
-            color: get-color("accent");
-        }
-    }
+    
 
     &__button {
         margin-bottom: 15px;
@@ -145,4 +116,36 @@
             background-color: get-color("form-bg");
         }
     }
+}
+
+.get-example-form__label {
+	position: absolute;
+	top: 50%;
+	left: 28px;
+
+	transform: translateY(-50%);
+	transform-origin: center left;
+
+	color: get-color("primary-black");
+	font-size: 16px;
+
+	transition: color $transition-duration $ttf, transform $transition-duration $ttf;
+
+	@include for-size(tablet) {
+			font-size: 18px;
+	}
+
+	.get-example-form__input:focus + & {
+			transform: translateY(calc(-50% - 45px)) scale(1);
+	}
+
+	.get-example-form__input:not(:placeholder-shown) + & {
+			color: get-color("primary-white");
+			transform: translateY(calc(-50% - 45px)) scale(0.8);
+	}
+
+	.get-example-form__field:hover &,
+	.get-example-form__input:focus + & {
+			color: get-color("accent");
+	}
 }
