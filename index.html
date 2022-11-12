@@ -1142,16 +1142,24 @@
                         <h2
                             class="section-title section-title--light section-title--left-aligned stock__section-title">
                             <span class="section-title__frame">
-                                <img
-                                    class="stock__giftbox"
-                                    src="./images/stock/giftbox-320.png"
-                                    srcset="
-									./images/stock/giftbox-320.png 1x,
-									./images/stock/giftbox-640.png 2x,
-									./images/stock/giftbox-960.png 3x
-									"
-                                    alt="Подарок"
-                                    />
+                                <picture>
+                                    <source
+                                        srcset="
+                                            ./images/stock/giftbox-320.avif 1x,
+                                            ./images/stock/giftbox-640.avif 2x,
+                                            ./images/stock/giftbox-960.avif 3x
+                                        "
+                                        type="image/avif" />
+                                    <img
+                                        class="stock__giftbox"
+                                        src="./images/stock/giftbox-320.png"
+                                        srcset="
+                                            ./images/stock/giftbox-320.png 1x,
+                                            ./images/stock/giftbox-640.png 2x,
+                                            ./images/stock/giftbox-960.png 3x
+                                        "
+                                        alt="Подарок" />
+                                </picture>
                                 <span class="excerpt excerpt--accent">Акция!</span> <br />
                                 <span class="stock__excerpt">
                                     при заказе комплекса барбекю -
@@ -1174,7 +1182,7 @@
                                         ./images/stock/light-brown-vase-1920.webp 1920w
                                     "
                                     type="image/webp"
-									sizes="50vw" />
+                                    sizes="50vw" />
                                 <img
                                     class="stock__image"
                                     srcset="
@@ -1184,7 +1192,7 @@
                                         ./images/stock/light-brown-vase-1280.jpg 1280w,
                                         ./images/stock/light-brown-vase-1920.jpg 1920w
                                     "
-									sizes="50vw"
+                                    sizes="50vw"
                                     src="./images/stock/light-brown-vase-320.jpg"
                                     alt="Светло-коричневая ваза с красными цветам" />
                             </picture>
@@ -1199,7 +1207,7 @@
                                         ./images/stock/asphalt-vase-1280.webp 1280w,
                                         ./images/stock/asphalt-vase-1920.webp 1920w
                                     "
-									sizes="50vw"
+                                    sizes="50vw"
                                     type="image/webp" />
                                 <img
                                     class="stock__image"
@@ -1210,7 +1218,7 @@
                                         ./images/stock/asphalt-vase-1280.jpg 1280w,
                                         ./images/stock/asphalt-vase-1920.jpg 1920w
                                     "
-									sizes="50vw"
+                                    sizes="50vw"
                                     src="./images/stock/asphalt-vase-320.jpg"
                                     alt="Асфальтная ваза с зеленой травой" />
                             </picture>
@@ -1225,7 +1233,7 @@
                                         ./images/stock/white-vase-1280.webp 1280w,
                                         ./images/stock/white-vase-1920.webp 1920w
                                     "
-									sizes="50vw"
+                                    sizes="50vw"
                                     type="image/webp" />
                                 <img
                                     class="stock__image"
@@ -1236,7 +1244,7 @@
                                         ./images/stock/white-vase-1280.jpg 1280w,
                                         ./images/stock/white-vase-1920.jpg 1920w
                                     "
-									sizes="50vw"
+                                    sizes="50vw"
                                     src="./images/stock/white-vase-320.jpg"
                                     alt="Белая ваза с зеленой травой" />
                             </picture>
@@ -1251,7 +1259,7 @@
                                         ./images/stock/brown-vase-1280.webp 1280w,
                                         ./images/stock/brown-vase-1920.webp 1920w
                                     "
-									sizes="50vw"
+                                    sizes="50vw"
                                     type="image/webp" />
                                 <img
                                     class="stock__image"
@@ -1262,7 +1270,7 @@
                                         ./images/stock/brown-vase-1280.jpg 1280w,
                                         ./images/stock/brown-vase-1920.jpg 1920w
                                     "
-									sizes="50vw"
+                                    sizes="50vw"
                                     src="./images/stock/brown-vase-320.jpg"
                                     alt="Коричневая ваза с  зеленой травой" />
                             </picture>
