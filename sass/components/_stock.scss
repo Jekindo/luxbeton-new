@@ -1,6 +1,5 @@
 .stock {
-	overflow: hidden;
-	
+
     &__excerpt {
         font-size: 20px;
 
@@ -76,12 +75,6 @@
             transform: skew(-15deg);
         }
     }
-}
-
-.stock__title-wrapper {
-    position: relative;
-
-    display: inline-block;
 }
 
 .stock__image {

@@ -1,19 +1,74 @@
 .get-example {
-    padding: 50px 0;
+    overflow: hidden;
+
+    padding-top: 50px;
+    padding-bottom: 50px;
 
     background-color: get-color("primary-white");
 
-	@include for-size(laptop) {
-		padding-bottom: 100px;
-	}
+    @include for-size(tablet) {
+        padding-bottom: 90px;
+    }
 
-    &__image {
-        @include for-size(laptop) {
+    @include for-size(laptop) {
+        padding-bottom: 100px;
+    }
+
+    &__thumb {
+        // outline: 1px solid red;
+
+        position: relative;
+        z-index: 1;
+
+        @include for-size(desktop) {
             position: absolute;
             top: 50%;
             right: 0;
             z-index: 1;
-			transform: translateX(50%) translateY(-50%);
+            transform: translateY(calc(-50% + 30px)) translateX(55%);
+
+			min-width: 750px;
+            max-width: 900px;
         }
+
+        &::before {
+            @media screen and (max-width: calc(#{$laptop} - 1px)) , (min-width: $desktop) {
+                outline: 1px solid red;
+
+                content: "";
+
+                position: absolute;
+                top: 0;
+                right: 0;
+                z-index: -1;
+                transform: translateY(-20%) translateX(20%);
+
+                width: 60%;
+                height: 125%;
+
+                background-image: url(../images/form/book-smoke.png);
+                background-size: contain;
+                background-position: center;
+                background-repeat: no-repeat;
+            }
+
+            @include for-size(tablet) {
+                height: 100%;
+                transform: translateY(-15%) translateX(20%);
+            }
+
+            @include for-size(desktop) {
+                width: 70%;
+                height: 150%;
+                transform: translateY(-50%) translateX(40%);
+            }
+        }
+    }
+
+    &__image {
+        margin-left: auto;
+        margin-right: auto;
+
+		width: 100%;
     }
 }
