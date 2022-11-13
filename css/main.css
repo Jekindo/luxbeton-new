@@ -1552,7 +1552,6 @@ body {
       -ms-flex-pack: center;
           justify-content: center;
   padding: 10px;
-  padding-bottom: 15px;
   background-color: #ff6712;
   color: #fff;
   cursor: pointer;
@@ -1570,6 +1569,7 @@ body {
       align-self: stretch;
   -ms-flex-preferred-size: 25%;
       flex-basis: 25%;
+  padding-bottom: 15px;
   font-weight: 500;
   font-size: 11px;
   line-height: 0.9;

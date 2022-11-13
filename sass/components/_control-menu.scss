@@ -18,7 +18,7 @@
         animation: gradient 10s ease infinite;
     }
 
-	@include for-size(laptop) {
+    @include for-size(laptop) {
         column-gap: 10px;
     }
 
@@ -36,41 +36,40 @@
         @extend %no-border;
         @include centered-flex(inline-flex, center, center);
         padding: 10px;
-		padding-bottom: 15px;
 
         background-color: get-color("secondary-accent");
         color: get-color("primary-white");
         cursor: pointer;
 
-        transition: transform $transition-duration $ttf,
-		            box-shadow $transition-duration $ttf,
-                    background-color $transition-duration $ttf;
+        transition: transform $transition-duration $ttf, box-shadow $transition-duration $ttf,
+            background-color $transition-duration $ttf;
     }
 
     &__button {
         flex-direction: column;
         align-self: stretch;
         flex-basis: 25%;
+        padding-bottom: 15px;
 
         @include font(500, 11px, 0.9);
         text-align: center;
 
-		&:hover, 
-		&:focus {
-			background-color: get-color('secondary-accent--hover');
+        &:hover,
+        &:focus {
+            background-color: get-color("secondary-accent--hover");
         }
-		
+
         @include for-size(until-laptop) {
             background-color: transparent;
         }
 
-		@include for-size(laptop) {
+        @include for-size(laptop) {
             flex-basis: calc((100% - 4 * 10px) / 5);
             padding: 15px;
 
             font-size: 12px;
 
-            &:hover, 
+            &:hover,
             &:focus {
                 box-shadow: 0px 0px 15px get-color("button-shadow");
                 transform: scale(1.02);
@@ -121,7 +120,7 @@
             display: none;
         }
 
-        &:hover, 
+        &:hover,
         &:focus {
             transform: scale(1.1);
             box-shadow: 0 0 24px -2px rgb(255 145 2 / 90%);
