@@ -1,10 +1,23 @@
 .advantages {
-    // padding: 20px 0;
+    padding: 25px 0;
 
     background-color: get-color(primary-white);
+    background-image: image-set(
+        url(../images/advantages/dark-cloud--end-640.png) 1x,
+        url(../images/advantages/dark-cloud--end-960.png) 2x
+    );
+    background-repeat: no-repeat;
+    background-size: 70% auto;
+    background-position: top 180px right;
 
     @include for-size(tablet) {
         padding: 50px 0;
+
+        background-position: top 150px right;
+    }
+
+    @include for-size(desktop) {
+        background-position: top 100px right;
     }
 
     &__list {
@@ -72,14 +85,16 @@
         }
 
         .advantages__item {
-            flex-basis: 50%;
+            @include for-size(tablet-only) {
+                flex-basis: 50%;
+            }
         }
 
         .advantages__image {
-        	// float: right;
-        	// shape-outside: url(../images/advantages/wood-puzzle-320.png);
-        	// shape-margin: 10px;
-        }		
+            @include for-size(mobile-only) {
+				max-width: 200px;
+			}
+        }
     }
 
     &--2c {
@@ -139,9 +154,9 @@
 
         background-image: $card-accent-gradient;
 
-		.advantages__image {
-			padding: 15px;
-		}
+        .advantages__image {
+            padding: 15px;
+        }
     }
 
     &--accent-reversed {
@@ -151,14 +166,14 @@
 
     &--light {
         @include centered-flex($main-axis: space-between);
-		min-height: 190px;
+        min-height: 190px;
 
         background-image: $card-light-gradient;
     }
 
     &--dark {
         position: relative;
-        z-index: 1;
+        z-index: 2;
 
         display: flex;
         flex-direction: column;
@@ -173,23 +188,22 @@
     }
 }
 
-
 .advantages__dark-cloud {
-	position: absolute;
-	z-index: -1;
+    position: absolute;
+    z-index: -1;
 
-	top: 190px;
-	right: 0;
+    top: 190px;
+    right: 0;
 
-	@include for-size(laptop) {
-		top: 160px;
-	}
+    @include for-size(laptop) {
+        top: 160px;
+    }
 
-	@include for-size(desktop) {
-		top: 130px;
-	}
+    @include for-size(desktop) {
+        top: 130px;
+    }
 
-	@media screen and (min-width: 1700px) {
-		top: 50px;
-	}
+    @media screen and (min-width: 1700px) {
+        top: 50px;
+    }
 }

@@ -10,45 +10,6 @@
         color: get-color("primary-black");
     }
 
-    &__inner {
-        padding-top: 80px;
-        padding-bottom: 60px;
-
-        border-radius: $card-mobile-border-radius;
-        background-image: linear-gradient(to right, rgba(22, 22, 22, 0.6), rgba(22, 22, 22, 0.6)),
-            image-set(
-                url(../images/design/design-bg-mobile.png) 1x,
-                url(../images/design/design-bg-mobile@2x.png) 2x
-            );
-        background-repeat: no-repeat;
-        background-size: contain;
-        background-position: bottom right;
-
-        @include for-size(tablet) {
-            padding-top: 100px;
-            padding-bottom: 135px;
-
-            border-radius: $card-border-radius;
-
-            background-image: linear-gradient(
-                    to right,
-                    rgba(22, 22, 22, 0.6),
-                    rgba(22, 22, 22, 0.6)
-                ),
-                image-set(
-                    url(../images/design/design-bg.png) 1x,
-                    url(../images/design/design-bg@2x.png) 2x
-                );
-        }
-
-        @include for-size(laptop) {
-            background-image: image-set(
-                url(../images/design/design-bg.png) 1x,
-                url(../images/design/design-bg@2x.png) 2x
-            );
-        }
-    }
-
     &__text {
         max-width: 470px;
         margin-bottom: 30px;
@@ -73,5 +34,65 @@
         @include for-size(laptop) {
             transform: translateY(-50%);
         }
+    }
+}
+
+.design__inner {
+    position: relative;
+
+    padding-top: 80px;
+    padding-bottom: 60px;
+
+    @include for-size(tablet) {
+        padding-top: 100px;
+        padding-bottom: 135px;
+    }
+    
+    &::before {
+        content: "";
+
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+
+        width: 100vw;
+        height: 100%;
+
+        border-radius: $card-mobile-border-radius;
+
+        background-image: linear-gradient(to right, rgba(22, 22, 22, 0.6), rgba(22, 22, 22, 0.6)),
+            image-set(
+                url(../images/design/design-bg-mobile.png) 1x,
+                url(../images/design/design-bg-mobile@2x.png) 2x
+            );
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: bottom right;
+
+        @include for-size(tablet) {
+            border-radius: $card-border-radius;
+
+            background-image: linear-gradient(
+                    to right,
+                    rgba(22, 22, 22, 0.6),
+                    rgba(22, 22, 22, 0.6)
+                ),
+                image-set(
+                    url(../images/design/design-bg.png) 1x,
+                    url(../images/design/design-bg@2x.png) 2x
+                );
+        }
+
+		@include for-size(laptop) {
+			background-image: image-set(
+				url(../images/design/design-bg.png) 1x,
+				url(../images/design/design-bg@2x.png) 2x
+			);
+		}
+
+		@include for-size(desktop) {
+			width: 100%;
+		}
     }
 }

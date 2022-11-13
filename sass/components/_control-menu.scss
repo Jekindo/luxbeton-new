@@ -36,6 +36,7 @@
         @extend %no-border;
         @include centered-flex(inline-flex, center, center);
         padding: 10px;
+		padding-bottom: 15px;
 
         background-color: get-color("secondary-accent");
         color: get-color("primary-white");

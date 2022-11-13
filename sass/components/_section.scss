@@ -26,7 +26,7 @@
         // Top Cloud
 
         &::before {
-            top: 0;
+            top: -1%;
             left: 0;
 
             background-image: image-set(
@@ -51,7 +51,7 @@
         // Bottom Cloud
 
         &::after {
-            bottom: 0;
+            bottom: -1%;
             left: 0;
 
             background-image: image-set(

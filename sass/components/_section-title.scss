@@ -9,13 +9,15 @@
     text-align: center;
 
    @include for-size (mobile) {
-		font-size: 40px;
+		font-size: 36px;
     }
 
     @include for-size(tablet) {
 		display: inline-block;
         padding-right: 35px;
         padding-left: 35px;
+
+		font-size: 40px;
     }
 
    @include for-size(laptop) {
